@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import icon_video from "../image/icon_video.png";
 import icon_cartegory from "../image/icon_cartegory.png";
 import icon_upload from "../image/icon_upload.png";
+import icon_mypage from "../image/icon_mypage.png";
+import icon_logout from "../image/icon_logout.png";
+
 import "./Navi.css";
 
 import $ from "jquery";
@@ -144,6 +147,30 @@ class Navi extends Component {
                     <span id="title_text2">동영상 업로드</span>
                   </div>
                 </Link>
+              </li>
+              <li class="group3">
+                <Link to="/Mypage">
+                  <p id="navi_mypage_btn">
+                    <img
+                      width="30"
+                      height="30"
+                      src={icon_mypage}
+                      id="navi_icon_mypage"
+                    />
+                    마이페이지
+                  </p>
+                </Link>
+                <u>
+                  <p id="navi_logout_btn">
+                    <img
+                      width="30"
+                      height="30"
+                      src={icon_logout}
+                      id="navi_icon_logout"
+                    />
+                    로그아웃
+                  </p>
+                </u>
               </li>
             </ul>
           </div>

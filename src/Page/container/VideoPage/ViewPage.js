@@ -17,14 +17,14 @@ class ViewPage extends Component {
             id="videoframe1"
             /*width="850"
             height="500"*/
-            src="https://wordballoon.s3.ap-northeast-2.amazonaws.com/kang_test.mp4"
+            src="https://wordballoon.s3.ap-northeast-2.amazonaws.com/en-us/%EB%82%A81%EC%97%AC1.mp4"
             frameborder="0"
             allowfullscreen
           ></iframe>
           <div>
-            <h1>독일 공영방송 도이체벨레(DW) 강경화 외교부 장관 인터뷰</h1>
-            <h1>1</h1>
-            <h1>2</h1>
+            <h1 id="video_name">
+              어떻게 하면 노동자들이 더 편해 질 수 있는가에 대한 토론
+            </h1>
           </div>
         </div>
         {/* */}

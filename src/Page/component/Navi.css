@@ -64,6 +64,16 @@
 
 /*추가한것*/
 @media (max-width: 480px) {
+  .navi {
+    position: fixed;
+    margin-top: 0;
+    padding-left: 0;
+    top: 0;
+    height: 100%;
+    width: 13%;
+    margin-left: 87%;
+    float: right;
+  }
   ul#group_all {
     display: none;
   }
@@ -73,11 +83,10 @@
   .btn {
     width: 50px;
     height: 50px;
-    position: fixed;
-    left: 0px;
-    /*top: 100px;*/
-    top: 110px;
+    position: relative;
+    float: right;
     z-index: 1;
+    background-color: #fab404;
     background-image: url("../image/menu.png");
     background-size: 50%;
     background-repeat: no-repeat;
@@ -99,6 +108,7 @@
   }
 
   #menu {
+    float: right;
     width: 220px;
     height: 100%;
     position: fixed;
@@ -132,10 +142,7 @@
     z-index: 4;
     display: none;
   }
-  /*#group_all2 {
-    margin-top: 50px;
-    padding-top: 50px;
-  }*/
+
   /*위와 동일 변수에 2만 다 붙여준거*/
   ul#group_all2 {
     width: 220px;
@@ -189,5 +196,42 @@
 
   ul.sub2 li:hover {
     background: #fcde94;
+  }
+  .group3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #f0f0f0;
+  }
+  #navi_mypage_btn {
+    width: 46%;
+    height: 35px;
+    display: inline-block;
+    border-right: 1px solid #c9c9c9;
+    margin: 0;
+    left: 0;
+    padding-top: 7px;
+    padding-right: 6px;
+    font-size: 14px;
+    color: black;
+  }
+  #navi_icon_mypage {
+    left: 0;
+    width: 18px;
+    height: 18px;
+  }
+  #navi_logout_btn {
+    width: 46%;
+    height: 35px;
+    display: inline-block;
+    margin: 0;
+    left: 0;
+    padding-top: 7px;
+    font-size: 15px;
+  }
+  #navi_icon_logout {
+    width: 18px;
+    height: 18px;
   }
 }

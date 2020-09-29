@@ -8,13 +8,16 @@
 }
 
 /*추가한것*/
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .ViewPage {
-    padding-top: 120px;
-    padding-left: 100px;
+    padding-top: 50px;
+    padding-left: 0;
   }
   #videoframe1 {
-    width: 600px;
-    height: 500px;
+    width: 360px;
+    height: 240px;
+  }
+  #video_name {
+    font-size: medium;
   }
 }
