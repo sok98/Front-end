@@ -1,0 +1,81 @@
+.App {
+  text-align: center;
+}
+
+body {
+  margin: 0;
+}
+.UploadVideoPage {
+  padding-top: 100px;
+}
+.UploadVideoPag_2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #fab404;
+}
+.dropzone_video {
+  width: 300px;
+  height: 240px;
+  border: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+a {
+  text-decoration: none;
+}
+#video_dropzone {
+  border: 3px solid #fab404;
+}
+#thumbnail_dropzone_dropzone {
+  border: 3px solid #fab404;
+}
+
+#title_input {
+  border: 3px solid #fab404;
+}
+#category_select {
+  border: 3px solid #fab404;
+}
+#submit_btn {
+  background-color: #fab404;
+  border: 3px solid #fab404;
+  color: white;
+}
+@media (max-width: 480px) {
+  .aa {
+    display: none;
+  }
+  .UploadVideoPag_2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #fab404;
+  }
+  .UploadVideoPage {
+    max-width: "375px";
+  }
+  .dropzone_video {
+    width: 200px;
+    height: 140px;
+    border: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #upload_title {
+    font-size: 20px;
+  }
+  #category_select {
+    max-width: 99%;
+  }
+  #title_input {
+    max-width: 96%;
+  }
+  #tagform_upload {
+    max-width: 99%;
+    margin-left: 0;
+  }
+  #tag_add_btn {
+    font-size: small;
+  }
+}

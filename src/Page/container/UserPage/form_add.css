@@ -1,0 +1,86 @@
+.ID,
+.PW_before,
+.personal {
+  display: table;
+  margin: auto;
+  width: 504px;
+  margin-top: 30px;
+}
+
+/*@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}*/
+
+.ID #ID,
+.PW_before #PW_now {
+  height: 50px;
+  border: 2px solid #fab404;
+  width: 74%;
+}
+.ID #ID_check_btn,
+.PW_before #PW_check_btn {
+  height: 50px;
+  border: 2px solid #fab404;
+  width: 22%;
+  margin-left: 2%;
+  color: white;
+  background-color: #fab404;
+  font-size: larger;
+}
+
+.personal #User_name,
+.personal #User_bityhday {
+  width: 47%;
+  height: 50px;
+  border: 2px solid #fab404;
+}
+.personal #User_bityhday {
+  margin-left: 2%;
+}
+
+@media screen and (max-width: 480px) {
+  .top_logo #logo_joinpage {
+    max-width: 300px;
+  }
+  /*
+   display: table;
+    margin: auto;
+    width: 300px;
+    height: 30px;
+    border: 2px solid #fab404;
+    margin-top: 20px;
+  */
+  .ID,
+  .PW_before,
+  .personal {
+    position: relative;
+    width: 308px;
+    margin-top: 20px;
+  }
+  .ID #ID,
+  .PW_before #PW_now {
+    width: 200px;
+    height: 30px;
+    border: 2px solid #fab404;
+  }
+  .ID #ID_check_btn,
+  .PW_before #PW_check_btn {
+    height: 35px;
+    border: 2px solid #fab404;
+    width: 93px;
+    color: white;
+    background-color: #fab404;
+    font-size: medium;
+  }
+  .personal #User_name,
+  .personal #User_bityhday {
+    width: 45%;
+    height: 30px;
+    border: 2px solid #fab404;
+  }
+  .personal #User_bityhday {
+    margin-left: 4%;
+  }
+}

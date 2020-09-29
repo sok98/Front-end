@@ -1,0 +1,193 @@
+.navi {
+  position: fixed;
+  margin-top: 120px;
+  padding-left: 40px;
+  height: 100%;
+  float: left;
+}
+/*group_all2가 자꾸 화면에 보여서 768이상 이하로 나눔*/
+@media screen and (min-width: 480px) {
+  ul#group_all {
+    width: 220px;
+    text-indent: 10px;
+  }
+  ul#group_all,
+  ul#group_all ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li.group {
+    margin-bottom: 0px;
+  }
+  li.group div.title {
+    height: 35px;
+    line-height: 35px;
+    background: #fab404;
+    cursor: pointer;
+    border: 1.5px solid #fab404;
+    color: white;
+  }
+  li.group div.title #title_icon {
+    padding-top: 7px;
+    padding-right: 7px;
+  }
+  li.group div.title #title_text {
+    padding-bottom: 50px;
+  }
+  ul.sub li {
+    margin-bottom: 2px;
+    height: 35px;
+    line-height: 35px;
+    background: white;
+    cursor: pointer;
+    border: 0.5px solid #fcde94;
+  }
+  ul.sub li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: gray;
+  }
+  ul.sub li:hover {
+    background: #fcde94;
+  }
+
+  ul.sub li:hover {
+    background: #fcde94;
+  }
+  ul#group_all2 {
+    display: none;
+  }
+}
+
+/*추가한것*/
+@media (max-width: 480px) {
+  ul#group_all {
+    display: none;
+  }
+  html.open {
+    overflow: hidden;
+  }
+  .btn {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    left: 0px;
+    /*top: 100px;*/
+    top: 110px;
+    z-index: 1;
+    background-image: url("../image/menu.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+
+  .close {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 0px;
+    margin-top: 0px;
+    background-image: url("../image/menudelete.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+
+  #menu {
+    width: 220px;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    right: -220px;
+    z-index: 10;
+    border: 1px solid #c9c9c9;
+    background-color: white;
+    text-align: left; /**/
+    transition: All 0.2s ease;
+    -webkit-transition: All 0.2s ease;
+    -moz-transition: All 0.2s ease;
+    -o-transition: All 0.2s ease;
+  }
+
+  #menu.open {
+    left: 0px;
+  }
+
+  .page_cover.open {
+    display: block;
+  }
+
+  .page_cover {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 4;
+    display: none;
+  }
+  /*#group_all2 {
+    margin-top: 50px;
+    padding-top: 50px;
+  }*/
+  /*위와 동일 변수에 2만 다 붙여준거*/
+  ul#group_all2 {
+    width: 220px;
+    text-indent: 10px;
+  }
+  ul#group_all2,
+  ul#group_all2 ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li.group2 {
+    margin-bottom: 0px;
+  }
+  li.group2 div.title2 {
+    height: 35px;
+    line-height: 35px;
+    background: #fab404;
+    cursor: pointer;
+    border: 1.5px solid #fab404;
+    color: white;
+    text-align: left;
+  }
+  li.group2 div.title2 #title_icon2 {
+    padding-top: 7px;
+    padding-right: 7px;
+    /*padding-left: 0px;*/
+  }
+  li.group2 div.title2 #title_text2 {
+    padding-bottom: 50px;
+    /*padding-left: 0px;*/
+  }
+  ul.sub2 li {
+    margin-bottom: 2px;
+    height: 35px;
+    line-height: 35px;
+    background: white;
+    cursor: pointer;
+    border: 0.5px solid #fcde94;
+  }
+  ul.sub2 li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: gray;
+  }
+  ul.sub2 li:hover {
+    background: #fcde94;
+  }
+
+  ul.sub2 li:hover {
+    background: #fcde94;
+  }
+}

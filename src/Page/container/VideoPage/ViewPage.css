@@ -1,0 +1,20 @@
+.ViewPage {
+  padding-top: 120px;
+  padding-left: 320px;
+}
+#videoframe1 {
+  width: 850px;
+  height: 500px;
+}
+
+/*추가한것*/
+@media (max-width: 768px) {
+  .ViewPage {
+    padding-top: 120px;
+    padding-left: 100px;
+  }
+  #videoframe1 {
+    width: 600px;
+    height: 500px;
+  }
+}

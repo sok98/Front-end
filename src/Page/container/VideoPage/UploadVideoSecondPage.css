@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.UploadVideoSecondPage {
+  padding-top: 100px;
+}
+
+#keyword_input {
+  border: 3px solid #fab404;
+}
+#tag_input {
+  border: 3px solid #fab404;
+  margin-left: 5px;
+}
+#tag_add_btn {
+  background-color: #fab404;
+  border: 3px solid #fab404;
+  color: white;
+  margin-left: 5px;
+}
+
+#character_input {
+  border: 3px solid #fab404;
+}
+#save_btn {
+  background-color: #fab404;
+  border: 3px solid #fab404;
+  color: white;
+}

@@ -1,0 +1,40 @@
+.CategoryBox {
+  display: block;
+}
+#c_btn {
+  background-color: white;
+  padding: 5px 40px;
+  font-size: 30px;
+  font-weight: bold;
+  border: 1px solid #fab404;
+}
+#c_icon {
+  padding-top: 10px;
+}
+#c_tag {
+  float: right;
+  padding-top: 22px;
+  padding-right: 13px;
+  color: black;
+}
+
+@media screen and (max-width: 768px) {
+  #c_btn {
+    display: table-cell;
+    padding: 5px 10px;
+  }
+  #c_icon {
+    float: left;
+    padding-top: 10px;
+    vertical-align: middle;
+    display: table;
+    height: 40px;
+    width: 40px;
+  }
+  #c_tag {
+    float: flat;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-left: 7px;
+  }
+}

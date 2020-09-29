@@ -1,0 +1,16 @@
+.top_video #top_video_text {
+  margin: 0px;
+}
+
+.view1 {
+  width: 230px;
+  height: 150px;
+  padding: 7px 13px;
+}
+.view1 #view_title {
+  display: inline;
+  margin: 0px;
+}
+
+@media screen and (max-width: 768px) {
+}

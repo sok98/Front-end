@@ -1,0 +1,75 @@
+#login_q,
+#login_btn {
+  text-align: center;
+  margin: 12px 12px;
+  color: #666;
+}
+#login_btn {
+  display: block;
+  background: #fab404;
+  color: white;
+  padding: 20px 0px;
+}
+
+.login_top {
+  margin: 12px 4px;
+  margin-bottom: 25px;
+}
+#login_user {
+  font-size: 21px;
+  color: black;
+}
+#login_logout {
+  float: right;
+  padding: 4px;
+  margin-top: 3px;
+  border: 1px solid #ababab;
+  border-radius: 27px;
+  text-decoration: none;
+  color: #666;
+  font-size: 14px;
+}
+.login_bottom {
+  display: table;
+  width: 100%;
+}
+#login_upload,
+#login_change {
+  display: table-cell;
+  width: 50%;
+  height: 30px;
+  border: 2px solid white;
+  background: #fab404;
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+#login_admin {
+  font-size: 12px;
+  padding: 1px;
+  border: 1px solid #ababab;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 770px) {
+  #login_q {
+    display: none;
+  }
+  #login_btn {
+    width: 100%;
+    height: 20px;
+    margin: 0;
+    padding-top: 10px;
+    font-size: 25px;
+    background: none;
+    color: #fab404;
+  }
+  .login_top {
+    padding-left: 7px;
+  }
+  .login_bottom {
+    display: none;
+  }
+}

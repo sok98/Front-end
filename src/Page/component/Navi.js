@@ -1,0 +1,155 @@
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import icon_video from "../image/icon_video.png";
+import icon_cartegory from "../image/icon_cartegory.png";
+import icon_upload from "../image/icon_upload.png";
+import "./Navi.css";
+
+import $ from "jquery";
+window.$ = window.jQuery = $;
+class Navi extends Component {
+  componentDidMount = () => {
+    $(".btn").click(function () {
+      $("#menu,.page_cover,html").addClass("open");
+      window.location.hash = "#open";
+    });
+    $(".close").click(function () {
+      $("#menu,.page_cover,html").removeClass("open");
+    });
+    /*window.onhashchange = function () {
+      if (window.location.hash != "#open") {
+        $("#menu,.page_cover,html").removeClass("open");
+      }
+    };*/
+  };
+  render() {
+    return (
+      <div className="Navi">
+        <div class="navi">
+          <ul id="group_all">
+            <li class="group">
+              <div class="title">
+                <img width="20" height="20" src={icon_video} id="title_icon" />
+                <span id="title_text">내 동영상</span>
+              </div>
+              <ul class="sub">
+                <li>
+                  <a href="#">최근 본 영상</a>
+                </li>
+                <li>
+                  <a href="#">좋아요 한 영상</a>
+                </li>
+                <li>
+                  <a href="#">맞춤 영상</a>
+                </li>
+              </ul>
+            </li>
+            <li class="group">
+              <div class="title">
+                <img
+                  width="20"
+                  height="20"
+                  src={icon_cartegory}
+                  id="title_icon"
+                />
+                <span id="title_text">카테고리</span>
+              </div>
+              <ul class="sub">
+                <li>
+                  <a href="#">한국 영상</a>
+                </li>
+                <li>
+                  <a href="#">영어 영상</a>
+                </li>
+                <li>
+                  <a href="#">독어 영상</a>
+                </li>
+              </ul>
+            </li>
+            <li class="group">
+              <Link to="/UploadVideo" id="UploadVideo">
+                <div class="title">
+                  <img
+                    width="20"
+                    height="20"
+                    src={icon_upload}
+                    id="title_icon"
+                  />
+                  <span id="title_text">동영상 업로드</span>
+                </div>
+              </Link>
+            </li>
+          </ul>
+
+          {/*화면 작아지면 ul은 위에꺼와 동일 id랑class에 2만 붙여줌 */}
+          {/*추가된건 btn~menu까지  */}
+          <div class="btn"></div>
+          <div onclick="history.back();" class="page_cover"></div>
+          <div id="menu">
+            <div onclick="history.back();" class="close"></div>
+            <ul id="group_all2">
+              <li class="group2">
+                <div class="title2">
+                  <img
+                    width="20"
+                    height="20"
+                    src={icon_video}
+                    id="title_icon2"
+                  />
+                  <span id="title_text2">내 동영상</span>
+                </div>
+                <ul class="sub2">
+                  <li>
+                    <a href="#">최근 본 영상</a>
+                  </li>
+                  <li>
+                    <a href="#">좋아요 한 영상</a>
+                  </li>
+                  <li>
+                    <a href="#">맞춤 영상</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="group2">
+                <div class="title2">
+                  <img
+                    width="20"
+                    height="20"
+                    src={icon_cartegory}
+                    id="title_icon2"
+                  />
+                  <span id="title_text2">카테고리</span>
+                </div>
+                <ul class="sub2">
+                  <li>
+                    <a href="#">한국 영상</a>
+                  </li>
+                  <li>
+                    <a href="#">영어 영상</a>
+                  </li>
+                  <li>
+                    <a href="#">독어 영상</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="group2">
+                <Link to="/UploadVideo" id="UploadVideo2">
+                  <div class="title2">
+                    <img
+                      width="20"
+                      height="20"
+                      src={icon_upload}
+                      id="title_icon2"
+                    />
+                    <span id="title_text2">동영상 업로드</span>
+                  </div>
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+export default Navi;
