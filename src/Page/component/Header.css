@@ -1,3 +1,7 @@
+.u {
+  color: black;
+  text-decoration: none;
+}
 .header {
   position: fixed;
   top: 0;
@@ -34,11 +38,15 @@
   position: fixed;
   margin-top: 30px;
   margin-left: 1200px;
+  color: black;
+  text-decoration: none;
 }
 #header_logout_btn {
   position: fixed;
   margin-top: 30px;
   margin-left: 1350px; /*header_mypage_btn이랑150px*/
+  color: black;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 480px) {

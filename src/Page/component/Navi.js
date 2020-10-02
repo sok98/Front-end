@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import icon_video from "../image/icon_video.png";
 import icon_cartegory from "../image/icon_cartegory.png";
 import icon_upload from "../image/icon_upload.png";
 import icon_mypage from "../image/icon_mypage.png";
 import icon_logout from "../image/icon_logout.png";
+import icon_login from "../image/icon_login.png";
 
 import "./Navi.css";
 
@@ -25,7 +27,23 @@ class Navi extends Component {
       }
     };*/
   };
+
   render() {
+    var username = localStorage.getItem("name");
+
+    const logout = () => {
+      axios.post("http://localhost:5050/api/auth/logout").then((response) => {
+        // localstorage 회원정보 삭제
+        localStorage.removeItem("userid");
+        localStorage.removeItem("password");
+        localStorage.removeItem("name");
+        localStorage.removeItem("birth");
+        localStorage.removeItem("isadmin");
+        alert("로그아웃되었습니다.");
+        console.log(response);
+        window.location.reload(true);
+      });
+    };
     return (
       <div className="Navi">
         <div class="navi">
@@ -149,28 +167,51 @@ class Navi extends Component {
                 </Link>
               </li>
               <li class="group3">
-                <Link to="/Mypage">
-                  <p id="navi_mypage_btn">
-                    <img
-                      width="30"
-                      height="30"
-                      src={icon_mypage}
-                      id="navi_icon_mypage"
-                    />
-                    마이페이지
-                  </p>
-                </Link>
-                <u>
-                  <p id="navi_logout_btn">
-                    <img
-                      width="30"
-                      height="30"
-                      src={icon_logout}
-                      id="navi_icon_logout"
-                    />
-                    로그아웃
-                  </p>
-                </u>
+                <div>
+                  {username ? (
+                    <div>
+                      <Link to="/Mypage" id="navi_mypage_btn">
+                        <img
+                          width="30"
+                          height="30"
+                          src={icon_mypage}
+                          id="navi_icon_mypage"
+                        />
+                        마이페이지
+                      </Link>
+                      <u id="navi_logout_btn" onClick={logout}>
+                        <img
+                          width="30"
+                          height="30"
+                          src={icon_logout}
+                          id="navi_icon_logout"
+                        />
+                        로그아웃
+                      </u>
+                    </div>
+                  ) : (
+                    <div>
+                      <Link to="/Login" id="navi_mypage_btn">
+                        <img
+                          width="30"
+                          height="30"
+                          src={icon_mypage}
+                          id="navi_icon_mypage"
+                        />
+                        마이페이지 {username}
+                      </Link>
+                      <Link to="/Login" id="navi_logout_btn">
+                        <img
+                          width="30"
+                          height="30"
+                          src={icon_login}
+                          id="navi_icon_logout"
+                        />
+                        로그인
+                      </Link>
+                    </div>
+                  )}
+                </div>
               </li>
             </ul>
           </div>
