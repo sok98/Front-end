@@ -1,13 +1,6 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  Typography,
-  Button,
-  Form,
-  message,
-  Input,
-} from "antd"; /*antd다운 필요  npm i antd*/
-import Dropzone from "react-dropzone"; /*react-dropzone다운필요 npm install react-dropzone --save*/
+import { Typography } from "antd"; /*antd다운 필요  npm i antd*/
 import axios from "axios"; /*npm i --save axios */
 import Header from "../../component/Header.js";
 import Navi from "../../component/Navi.js";
@@ -22,60 +15,66 @@ const CatogoryOptions = [
 
 function UploadVideoPage() {
   const [VideoTitle, setVideoTitle] = useState("");
-  const [Categories, setCategories] = useState("한국");
-  const [FilePath, setFilePath] = useState("");
+  const [Categories, setCategories] = useState("ko-kr");
+  const [FilePath, setFilePath] = useState(null);
 
-  var username = localStorage.getItem("name");
-  var mp4;
+  /* 비디오 (이벤트)*/
+  const onVideoChange = (e) => {
+    setFilePath(e.target.files[0]);
+    console.log("비디오 업로드 칸");
+  };
 
   /* 제목 (이벤트)*/
   const onTitleChange = (e) => {
     setVideoTitle(e.currentTarget.value);
     console.log("제목쓰는칸");
   };
+
   /* 카테고리 (이벤트)*/
   const onCategoryChange = (e) => {
     setCategories(e.currentTarget.value);
     console.log("카테고리칸");
   };
-  /*드래그앤드롭  */
-  //let formData = new FormData();
-  const onDrop = (files) => {
-    let formData = new FormData();
-    const config = {
-      header: { "content-type": "multipart/form-data" },
-    };
-    formData.append("file", files[0]);
-    console.log("드래그앤드롭안");
-    console.log(files[0]);
-    localStorage.setItem("dropvideo", files[0]);
-  };
 
-  var dropvideo = localStorage.getItem("dropvideo");
-  console.log(dropvideo);
-  console.log(username);
+  /*드래그앤드롭  */
 
   /*submit버튼 누르면 페이지 넘어감  */
   const onSubmit = (e) => {
+    console.log("submit안");
     e.preventDefault();
-    console.log("submit안입니다");
-    let body = {
-      videofile: dropvideo,
-      inbucket: Categories,
-      pvideotitle: VideoTitle,
-      uploader: username,
+
+    console.log(FilePath);
+    console.log(Categories);
+    console.log(VideoTitle);
+    console.log(localStorage.getItem("name"));
+
+    var formData = new FormData();
+    formData.append("videofile", FilePath);
+    formData.append("inbucket", Categories);
+    formData.append("pvideotitle", VideoTitle);
+    formData.append("uploader", localStorage.getItem("userid"));
+
+    console.log(formData);
+    for (var key of formData.keys()) {
+      console.log(key);
+    }
+
+    for (var value of formData.values()) {
+      console.log(value);
+    }
+
+    const config = {
+      header: { "content-type": "multipart/form-data" },
     };
+
     console.log("axios밖입니다");
+
     axios
-      .post("http://localhost:5050/api/upload/video", body)
+      .post("http://localhost:5050/api/upload/video", formData, config)
       .then((response) => {
         console.log(response);
         console.log("axios안입니다");
         if (response.data.success) {
-          //localStorage.setItem("videofile", response.data.videofile);
-          localStorage.setItem("inbucket", response.data.inbucket);
-          localStorage.setItem("pvideotitle", response.data.pvideotitle);
-          //localStorage.setItem("uploader", response.data.uploader);
           alert("업로드 성공");
           console.log(response.data);
         } else {
@@ -94,16 +93,14 @@ function UploadVideoPage() {
           {" "}
           Upload Video
         </Title>
-        <Form onSubmit={onSubmit}>
-          <div id="upload_after_form">
-            <Dropzone onDrop={onDrop} multiple={false} maxSize={800000000}>
-              {({ getRootProps, getInputProps }) => (
-                <div id="upload_after_dropzone" {...getRootProps()}>
-                  <input {...getInputProps()} />
-                </div>
-              )}
-            </Dropzone>
-          </div>
+
+        <form onSubmit={onSubmit}>
+          {/*영상*/}
+          <br />
+          <br />
+          <label id="video_label">video</label>
+          <br />
+          <input id="video_input" type="file" onChange={onVideoChange} />
 
           {/*제목*/}
           <br />
@@ -114,6 +111,8 @@ function UploadVideoPage() {
 
           {/*카테고리*/}
           <br />
+          <br />
+          <label id="category_label">Category</label>
           <br />
           <select id="category_select" onChange={onCategoryChange}>
             {CatogoryOptions.map((item, index) => (
@@ -126,12 +125,10 @@ function UploadVideoPage() {
           {/*버튼*/}
           <br />
           <br />
-          <Link to="/UploadVideoSecond">
-            <Button id="uploadpage_submit_btn" type="primary">
-              Submit
-            </Button>
-          </Link>
-        </Form>
+          <button id="uploadpage_submit_btn" type="submit">
+            Submit
+          </button>
+        </form>
       </div>
     </div>
   );
