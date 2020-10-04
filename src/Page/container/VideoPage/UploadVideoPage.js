@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { Typography } from "antd"; /*antd다운 필요  npm i antd*/
 import axios from "axios"; /*npm i --save axios */
 import Header from "../../component/Header.js";
@@ -41,11 +40,6 @@ function UploadVideoPage() {
     console.log("submit안");
     e.preventDefault();
 
-    console.log(FilePath);
-    console.log(Categories);
-    console.log(VideoTitle);
-    console.log(localStorage.getItem("name"));
-
     //formData
     var formData = new FormData();
     formData.append("videofile", FilePath);
@@ -62,17 +56,17 @@ function UploadVideoPage() {
       header: { "content-type": "multipart/form-data" },
     };
 
-    axios
+    axios //업로드 axios
       .post("http://localhost:5050/api/upload/video", formData, config)
       .then((response) => {
+        console.log("업로드 axios 안");
         console.log(response);
-        console.log("axios안");
+
         if (response.data.success) {
           alert("업로드 성공");
           localStorage.setItem("inbucket", Categories);
           localStorage.setItem("pvideotitle", VideoTitle);
           localStorage.setItem("thumbnail", response.data.thumbnail);
-          console.log(response.data);
 
           let body = {
             inbucket: localStorage.getItem("inbucket"),
@@ -83,6 +77,8 @@ function UploadVideoPage() {
             .post("http://localhost:5050/api/upload/stt", body)
             .then((response) => {
               console.log("stt axios 안");
+              console.log(response);
+
               if (response.data.success) {
                 alert("stt 성공");
                 console.log("stt 성공");
@@ -91,6 +87,8 @@ function UploadVideoPage() {
                   .post("http://localhost:5050/api/upload/textrank", body)
                   .then((restponse) => {
                     console.log("textrank axios 안");
+                    console.log(response);
+
                     if (response.data.success) {
                       alert("textrank 성공");
                       console.log("stt 성공");
