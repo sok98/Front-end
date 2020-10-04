@@ -1,3 +1,6 @@
+.App {
+  text-align: center;
+}
 body {
   margin: 0;
 }
@@ -8,14 +11,22 @@ a {
 
 .UploadVideoSecondPage {
   padding-top: 100px;
+  max-width: 700px;
+  color: #fab404;
+  margin: 0.5rem auto;
 }
-
-#keyword_input {
-  border: 3px solid #fab404;
+#uploadpage2_title {
+  text-align: center;
+}
+#tag_label {
+  color: #fab404;
+}
+#tag_upload {
+  width: 700px;
+  height: 30px;
 }
 #tag_input {
   border: 3px solid #fab404;
-  margin-left: 5px;
 }
 #tag_add_btn {
   background-color: #fab404;
@@ -23,12 +34,11 @@ a {
   color: white;
   margin-left: 5px;
 }
-
-#character_input {
-  border: 3px solid #fab404;
-}
-#save_btn {
+#uploadpage2_submit_btn {
   background-color: #fab404;
   border: 3px solid #fab404;
   color: white;
+  width: "60px";
+  height: "30px";
+  font-size: large;
 }

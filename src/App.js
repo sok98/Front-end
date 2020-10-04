@@ -11,6 +11,7 @@ import ListPage from "./Page/container/VideoPage/ListPage";
 import AdminPage from "./Page/container/AdminPage/AdminPage";
 import UploadVideoPage from "./Page/container/VideoPage/UploadVideoPage";
 import UploadVideoSecondPage from "./Page/container/VideoPage/UploadVideoSecondPage";
+import UploadVideoThirdPage from "./Page/container/VideoPage/UploadVideoThirdPage";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
       <Route path="/Change" component={ChangePage} />
       <Route path="/UploadVideo" component={UploadVideoPage} />
       <Route path="/UploadVideoSecond" component={UploadVideoSecondPage} />
+      <Route path="/UploadVideoThird" component={UploadVideoThirdPage} />
     </div>
   );
 };

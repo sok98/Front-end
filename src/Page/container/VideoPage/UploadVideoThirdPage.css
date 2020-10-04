@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+}
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.UploadVideoThirdPage {
+  padding-top: 100px;
+  color: #fab404;
+  margin: 0.5rem auto;
+}
+#upload_success_message {
+  margin-top: 150px;
+  margin-left: 35%;
+}
+#upload_success_message2 {
+  margin-left: 41%;
+}
