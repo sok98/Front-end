@@ -40,6 +40,7 @@ function UploadVideoPage() {
     console.log("submit안");
     e.preventDefault();
 
+    //타이틀에 공백있는지 확인
     if (VideoTitle.indexOf(" ") !== -1) {
       alert("title을 다시 확인해주세요.");
       break;
