@@ -15,10 +15,10 @@ class MyPage extends Component {
         <Navi />
         <div class="MyPage">
           <div class="left_mypage">
-            <h1 id="keyword">선호하는 영상 키워드</h1>
+            <UserInfoBox />
           </div>
           <div class="right_mypage">
-            <UserInfoBox />
+            <h1 id="keyword">선호하는 영상 키워드</h1>
           </div>
         </div>
       </div>

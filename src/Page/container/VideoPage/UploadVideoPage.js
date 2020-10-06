@@ -43,73 +43,72 @@ function UploadVideoPage() {
     //타이틀에 공백있는지 확인
     if (VideoTitle.indexOf(" ") !== -1) {
       alert("title을 다시 확인해주세요.");
-      break;
+    } else {
+      //formData
+      var formData = new FormData();
+      formData.append("videofile", FilePath);
+      formData.append("inbucket", Categories);
+      formData.append("pvideotitle", VideoTitle);
+      formData.append("uploader", localStorage.getItem("userid"));
+
+      //formData 확인
+      for (var value of formData.values()) {
+        console.log(value);
+      }
+
+      const config = {
+        header: { "content-type": "multipart/form-data" },
+      };
+
+      axios //업로드 axios
+        .post("http://localhost:5050/api/upload/video", formData, config)
+        .then((response) => {
+          console.log("업로드 axios 안");
+          console.log(response);
+
+          if (response.data.success) {
+            alert("업로드 성공");
+            localStorage.setItem("inbucket", Categories);
+            localStorage.setItem("pvideotitle", VideoTitle);
+            localStorage.setItem("thumbnail", response.data.thumbnail);
+
+            let body = {
+              inbucket: localStorage.getItem("inbucket"),
+              pvideotitle: localStorage.getItem("pvideotitle"),
+            };
+
+            axios //stt axios
+              .post("http://localhost:5050/api/upload/stt", body)
+              .then((response) => {
+                console.log("stt axios 안");
+                console.log(response);
+
+                if (response.data.success) {
+                  alert("stt 성공");
+                  console.log("stt 성공");
+
+                  axios
+                    .post("http://localhost:5050/api/upload/textrank", body)
+                    .then((restponse) => {
+                      console.log("textrank axios 안");
+                      console.log(response);
+
+                      if (response.data.success) {
+                        alert("textrank 성공");
+                        console.log("stt 성공");
+                      } else {
+                        alert("textrank 실패");
+                      }
+                    });
+                } else {
+                  alert("stt 실패");
+                }
+              });
+          } else {
+            alert("업로드 실패");
+          }
+        });
     }
-
-    //formData
-    var formData = new FormData();
-    formData.append("videofile", FilePath);
-    formData.append("inbucket", Categories);
-    formData.append("pvideotitle", VideoTitle);
-    formData.append("uploader", localStorage.getItem("userid"));
-
-    //formData 확인
-    for (var value of formData.values()) {
-      console.log(value);
-    }
-
-    const config = {
-      header: { "content-type": "multipart/form-data" },
-    };
-
-    axios //업로드 axios
-      .post("http://localhost:5050/api/upload/video", formData, config)
-      .then((response) => {
-        console.log("업로드 axios 안");
-        console.log(response);
-
-        if (response.data.success) {
-          alert("업로드 성공");
-          localStorage.setItem("inbucket", Categories);
-          localStorage.setItem("pvideotitle", VideoTitle);
-          localStorage.setItem("thumbnail", response.data.thumbnail);
-
-          let body = {
-            inbucket: localStorage.getItem("inbucket"),
-            pvideotitle: localStorage.getItem("pvideotitle"),
-          };
-
-          axios //stt axios
-            .post("http://localhost:5050/api/upload/stt", body)
-            .then((response) => {
-              console.log("stt axios 안");
-              console.log(response);
-
-              if (response.data.success) {
-                alert("stt 성공");
-                console.log("stt 성공");
-
-                axios
-                  .post("http://localhost:5050/api/upload/textrank", body)
-                  .then((restponse) => {
-                    console.log("textrank axios 안");
-                    console.log(response);
-
-                    if (response.data.success) {
-                      alert("textrank 성공");
-                      console.log("stt 성공");
-                    } else {
-                      alert("textrank 실패");
-                    }
-                  });
-              } else {
-                alert("stt 실패");
-              }
-            });
-        } else {
-          alert("업로드 실패");
-        }
-      });
   };
 
   return (

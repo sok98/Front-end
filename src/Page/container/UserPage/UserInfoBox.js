@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-//import "./UserInfoBox.css";
+import "./UserInfoBox.css";
 
 function UserInfoBox() {
   var userid = localStorage.getItem("userid");
@@ -10,11 +10,25 @@ function UserInfoBox() {
   var userbirth = localStorage.getItem("birth");
 
   return (
-    <div>
-      <p>{userid}</p>
-      <p>{username}</p>
-      <p>{userbirth}</p>
-      <Link to="/Change">정보변경</Link>
+    <div className="userinfobox">
+      <label id="table_label">사용자 정보</label>
+      <table id="table_user" border="1">
+        <tr>
+          <td id="table_h">ID</td>
+          <td id="table_b">{userid}</td>
+        </tr>
+        <tr>
+          <td id="table_h">NAME</td>
+          <td id="table_b">{username}</td>
+        </tr>
+        <tr>
+          <td id="table_h">BIRTH</td>
+          <td id="table_b">{userbirth}</td>
+        </tr>
+      </table>
+      <Link to="/Change" id="change_btn">
+        정보변경
+      </Link>
     </div>
   );
 }

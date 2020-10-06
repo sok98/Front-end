@@ -1,0 +1,32 @@
+.userinfobox {
+  width: 350px;
+}
+#table_label {
+  font-size: 23px;
+  font-weight: bold;
+}
+#table_user {
+  border: 3px dotted gray;
+  border-collapse: collapse;
+  margin: 7px 0;
+}
+#table_h {
+  width: 115px;
+  height: 55px;
+  font-size: 21px;
+  color: #4d4d4d;
+  text-align: center;
+}
+#table_b {
+  width: 215px;
+  padding-left: 10px;
+  font-size: 22px;
+}
+#change_btn {
+  color: white;
+  background-color: #fab404;
+  float: right;
+  border: 5px solid #fab404;
+  font-size: 20px;
+  margin-top: 5px;
+}
