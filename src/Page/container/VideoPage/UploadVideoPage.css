@@ -34,6 +34,10 @@ a {
 #video_label {
   color: #fab404;
 }
+
+#title_war {
+  color: red;
+}
 #video_input {
   color: black;
   margin: 1px;

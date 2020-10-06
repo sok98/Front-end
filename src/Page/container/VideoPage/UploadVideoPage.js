@@ -40,6 +40,11 @@ function UploadVideoPage() {
     console.log("submit안");
     e.preventDefault();
 
+    if (VideoTitle.indexOf(" ") !== -1) {
+      alert("title을 다시 확인해주세요.");
+      break;
+    }
+
     //formData
     var formData = new FormData();
     formData.append("videofile", FilePath);
@@ -73,7 +78,7 @@ function UploadVideoPage() {
             pvideotitle: localStorage.getItem("pvideotitle"),
           };
 
-          axios
+          axios //stt axios
             .post("http://localhost:5050/api/upload/stt", body)
             .then((response) => {
               console.log("stt axios 안");
@@ -127,7 +132,9 @@ function UploadVideoPage() {
           {/*제목*/}
           <br />
           <br />
-          <label id="title_label">Tittle</label>
+          <label id="title_label">
+            Tittle <span id="title_war"> (띄어쓰기 불가)</span>
+          </label>
           <br />
           <input id="title_input" onChange={onTitleChange} value={VideoTitle} />
 
