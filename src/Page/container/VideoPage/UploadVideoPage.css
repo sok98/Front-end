@@ -1,18 +1,8 @@
-.App {
-  text-align: center;
-}
-body {
-  margin: 0;
-}
-a {
-  text-decoration: none;
-}
 .UploadVideoPage {
   padding-top: 120px;
-  /*padding-left: 320px;*/
+  padding-left: 320px;
   max-width: 500px;
   color: #fab404;
-  margin: 0.5rem auto;
 }
 #uploadpage_title {
   text-align: center;
@@ -63,12 +53,6 @@ a {
   width: "60px";
   height: "30px";
   font-size: large;
-}
-
-@media (max-width: 1000px) {
-  .UploadVideoPage {
-    padding-left: 320px;
-  }
 }
 
 @media (max-width: 480px) {

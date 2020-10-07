@@ -18,27 +18,11 @@ function HomePage() {
     setSearchword(event.currentTarget.value);
   };
 
-  const enterkey = (event) => {
-    if (window.event.keyCode == 13) {
-      onSearchCheckHandler();
-    }
-  };
-
   const onSearchCheckHandler = (event) => {
     console.log("핸들러 들어옴");
     event.preventDefault();
-
-    let body = {
-      searchword: Searchword,
-    };
-
-    Axios.post("http://localhost:5050/api/searchword/title", body).then(
-      (response) => {
-        alert("검색 성공");
-        console.log(response);
-        window.location.pathname = "/List";
-      }
-    );
+    localStorage.setItem("searchword", Searchword);
+    window.location.pathname = "/List";
   };
 
   return (
@@ -69,7 +53,6 @@ function HomePage() {
             <input
               id="search_bar"
               type="text"
-              onkeyup={enterkey}
               placeholder="검색어 입력"
               onChange={onSearchHandler}
             ></input>

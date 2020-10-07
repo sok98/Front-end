@@ -85,9 +85,10 @@ const { Title } = Typography;
 
 function UploadVideoSecondPage() {
   //정보나타내주기 위해 local에서 정보 get
-  var username = localStorage.getItem("name");
+  var video_thumbnail = localStorage.getItem("thumbnail");
   var video_category = localStorage.getItem("inbucket");
   var video_title = localStorage.getItem("pvideotitle");
+  var video_userid = localStorage.getItem("userid");
 
   //태그관련
   const [input, setInput] = useState("");
@@ -120,7 +121,6 @@ function UploadVideoSecondPage() {
 
   /*submit버튼 누르면 페이지 넘어감  */
   const onSubmit = (e) => {};
-
   return (
     <div>
       <Header />
@@ -128,18 +128,31 @@ function UploadVideoSecondPage() {
       <div class="UploadVideoSecondPage">
         <Title level={2} id="uploadpage2_title">
           {" "}
-          UploadSecond
+          Upload Video
         </Title>
-        {/*{Thumbnail !== "" &&
-          <div>
-            <img src={`http://localhost:5000/${Thumbnail}`} alt="haha" />
-          </div>
-        }*/}
-        <div id="video_info">
-          <p>제목: {video_title}</p>
-          <p>카테고리: {video_category}</p>
-          <p>업로드하는사람: {username}</p>
+        <div id="video_thumbnail_info">
+          <img
+            src={video_thumbnail}
+            width="550px"
+            height="300px"
+            alt="thumbnail"
+          />
         </div>
+        <table id="video_info">
+          <tr>
+            <td id="video_table_h">제목</td>
+            <td id="video_table_b">{video_title}</td>
+          </tr>
+          <tr>
+            <td id="video_table_h">카테고리</td>
+            <td id="video_table_b">{video_category}</td>
+          </tr>
+          <tr>
+            <td id="video_table_h">게시자</td>
+            <td id="video_table_b">{video_userid}</td>
+          </tr>
+        </table>
+
         <Form onSubmit={onSubmit}>
           <TagBoxBlock>
             <label id="tag_label">태그</label>

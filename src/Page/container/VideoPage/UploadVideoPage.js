@@ -98,6 +98,7 @@ function UploadVideoPage() {
                 if (response.data.success) {
                   alert("textrank 성공");
                   console.log("textrank 성공");
+                  window.location.pathname = "/UploadVideoSecond";
                 } else {
                   alert("textrank 실패");
                 }
@@ -127,7 +128,7 @@ function UploadVideoPage() {
           {/*영상*/}
           <br />
           <br />
-          <label id="video_label">video</label>
+          <label id="video_label">Video</label>
           <br />
           <input id="video_input" type="file" onChange={onVideoChange} />
 
