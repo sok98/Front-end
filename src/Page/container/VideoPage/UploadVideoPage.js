@@ -4,6 +4,7 @@ import axios from "axios"; /*npm i --save axios */
 import Header from "../../component/Header.js";
 import Navi from "../../component/Navi.js";
 import "./UploadVideoPage.css";
+import { delay } from "lodash";
 
 const { Title } = Typography;
 
@@ -75,9 +76,10 @@ function UploadVideoPage() {
             let body = {
               inbucket: localStorage.getItem("inbucket"),
               pvideotitle: localStorage.getItem("pvideotitle"),
+              uploader: localStorage.getItem("userid"),
             };
 
-            axios //stt axios
+            /*axios //stt axios
               .post("http://localhost:5050/api/upload/stt", body)
               .then((response) => {
                 console.log("stt axios 안");
@@ -86,24 +88,24 @@ function UploadVideoPage() {
                 if (response.data.success) {
                   alert("stt 성공");
                   console.log("stt 성공");
+                  setTimeout("6분만 기다리자", 360000);*/
+            axios
+              .post("http://localhost:5050/api/upload/textrank", body)
+              .then((restponse) => {
+                console.log("textrank axios 안");
+                console.log(response);
 
-                  axios
-                    .post("http://localhost:5050/api/upload/textrank", body)
-                    .then((restponse) => {
-                      console.log("textrank axios 안");
-                      console.log(response);
-
-                      if (response.data.success) {
-                        alert("textrank 성공");
-                        console.log("stt 성공");
-                      } else {
-                        alert("textrank 실패");
-                      }
-                    });
+                if (response.data.success) {
+                  alert("textrank 성공");
+                  console.log("textrank 성공");
                 } else {
-                  alert("stt 실패");
+                  alert("textrank 실패");
                 }
               });
+            /*} else {
+                  alert("stt 실패");
+                }
+              });*/
           } else {
             alert("업로드 실패");
           }

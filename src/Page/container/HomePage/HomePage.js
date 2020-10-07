@@ -12,10 +12,16 @@ import TopVideoBox from "./TopVideoBox.js";
 import "./HomePage.css";
 
 function HomePage() {
-  const [SearchCnt, setSearchCnt] = useState("");
+  const [Searchword, setSearchword] = useState("");
 
   const onSearchHandler = (event) => {
-    setSearchCnt(event.currentTarget.value);
+    setSearchword(event.currentTarget.value);
+  };
+
+  const enterkey = (event) => {
+    if (window.event.keyCode == 13) {
+      onSearchCheckHandler();
+    }
   };
 
   const onSearchCheckHandler = (event) => {
@@ -23,12 +29,16 @@ function HomePage() {
     event.preventDefault();
 
     let body = {
-      searchCnt: SearchCnt,
+      searchword: Searchword,
     };
 
-    Axios.post("", body).then((response) => {
-      console.log(response);
-    });
+    Axios.post("http://localhost:5050/api/searchword/title", body).then(
+      (response) => {
+        alert("검색 성공");
+        console.log(response);
+        window.location.pathname = "/List";
+      }
+    );
   };
 
   return (
@@ -59,6 +69,7 @@ function HomePage() {
             <input
               id="search_bar"
               type="text"
+              onkeyup={enterkey}
               placeholder="검색어 입력"
               onChange={onSearchHandler}
             ></input>
