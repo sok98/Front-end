@@ -16,43 +16,10 @@ import "./UploadVideoSecondPage.css";
 
 //태그 디자인
 const TagBoxBlock = styled.div`
-  width: 100%;
-  padding-top: 0.5rem;
   margin-top: 0;
-  h4 {
-    color: #fab404
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-  }
 `;
 const TagForm = styled.form`
-  border-radius: 4px;
-  overflow: hidden;
-  display: flex;
-  width: 256px;
   margin-top: 0;
-  input,
-  button {
-    outline: none;
-    border: none;
-    font-size: 1rem;
-  }
-  input {
-    padding: 0px;
-    flex: 1;
-  }
-  button {
-    cursor: pointer;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    border: none;
-    background: #fab404;
-    color: white;
-    font-weight: bold;
-    &:hover {
-      background: #fab404;
-    }
-  }
 `;
 const Tag = styled.div`
   margin-right: 0.5rem;
@@ -64,6 +31,7 @@ const Tag = styled.div`
 `;
 const TagListBlock = styled.div`
   display: flex;
+  width: 500px;
   margin-top: 0.5rem;
 `;
 
@@ -133,7 +101,7 @@ function UploadVideoSecondPage() {
         <div id="video_thumbnail_info">
           <img
             src={video_thumbnail}
-            width="550px"
+            width="500px"
             height="300px"
             alt="thumbnail"
           />

@@ -1,37 +1,50 @@
 .UploadVideoSecondPage {
   padding-top: 120px;
-  padding-left: 320px;
   max-width: 500px;
   color: #fab404;
+  margin: 0.5rem auto;
 }
 #uploadpage2_title {
   text-align: center;
 }
 #video_info {
-  color: black;
+  margin: 15px 0;
 }
 #video_table_h {
   height: 30px;
-  width: 100px;
+  width: 90px;
+  color: #464646;
+  border-right: 1px solid #d1d1d1;
+}
+#video_table_b {
+  width: 300px;
+  padding-left: 15px;
+  color: black;
+  font-size: 17px;
 }
 #tag_label {
   color: #fab404;
 }
 #tag_upload {
-  width: 700px;
-  height: 30px;
+  width: 500px;
+  /*height: 30px;*/
 }
 #tag_input {
   border: 2px solid #fab404;
   margin: 1px;
-  width: 500px;
-  height: 40px;
+  width: 430px;
+  height: 35px;
 }
 #tag_add_btn {
   background-color: #fab404;
-  border: 3px solid #fab404;
+  border: 2px solid #fab404;
+  border-radius: 5px;
   color: white;
+  font-size: 15px;
   margin-left: 5px;
+  width: 50px;
+  height: 40px;
+  font-weight: bold;
 }
 #uploadpage2_submit_btn {
   float: right;
@@ -41,8 +54,14 @@
   width: "60px";
   height: "30px";
   font-size: large;
+  margin-bottom: 50px;
 }
 
+@media (max-width: 1000px) {
+  .UploadVideoSecondPage {
+    padding-left: 320px;
+  }
+}
 @media (max-width: 480px) {
   .UploadVideoSecondPage {
     padding-left: 0;

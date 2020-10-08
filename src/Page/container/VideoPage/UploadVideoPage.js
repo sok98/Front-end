@@ -136,7 +136,7 @@ function UploadVideoPage() {
           <br />
           <br />
           <label id="title_label">
-            Tittle <span id="title_war"> (띄어쓰기 불가)</span>
+            Tittle <span id="title_warning"> (띄어쓰기 불가)</span>
           </label>
           <br />
           <input id="title_input" onChange={onTitleChange} value={VideoTitle} />
