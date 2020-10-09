@@ -22,12 +22,13 @@ const TagForm = styled.form`
   margin-top: 0;
 `;
 const Tag = styled.div`
-  margin-right: 0.5rem;
-  color: #fcde94;
+  margin: 5px;
+  border: 1px solid gray;
+  border-radius: 20px;
+  padding: 5px;
+  background: #f0f0f0;
+  color: black;
   cursor: pointer;
-  &:hover {
-    opacity: 0.5;
-  }
 `;
 const TagListBlock = styled.div`
   display: flex;

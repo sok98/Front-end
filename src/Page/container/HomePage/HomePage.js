@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Axios from "axios";
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 import logo from "../../image/namelogo_orange.PNG";
@@ -19,10 +19,24 @@ function HomePage() {
   };
 
   const onSearchCheckHandler = (event) => {
-    console.log("핸들러 들어옴");
     event.preventDefault();
+    console.log("핸들러 들어옴");
     localStorage.setItem("searchword", Searchword);
     window.location.pathname = "/List";
+
+    /*let body = {
+      searchword: Searchword,
+    };
+
+    axios
+      .post("http://localhost:5050/api/searchword/title", body)
+      .then((response) => {
+        alert("검색 성공");
+        console.log(response.data);
+
+        //localStorage.setItem("ItemList", response);
+        //window.location.pathname = "/List";
+      });*/
   };
 
   return (
