@@ -39,39 +39,32 @@ class ListPage extends Component {
     console.log("ItemList 확인");
     console.log(ItemList);
     return (
-      <div>
+      <div className="scroll">
         <Header />
         <Navi />
         <div className="ListPage">
-          {/*<ListItemBox Itemcard={ItemList} />*/}
           <p>{this.searchword} 에 대한 검색 결과 :</p>
           <ul className="ListItemBox">
             {ItemList &&
               ItemList.map((itemdata) => {
                 return (
-                  <table className="itemtable">
-                    <tr>
-                      <td rowSpan="4" align="center">
-                        <img
-                          width="250px"
-                          height="150px"
-                          src={itemdata.thumbnail}
-                          id="item_image"
-                          alt=""
-                        />
-                      </td>
-                      <td id="item_title">{itemdata.videotitle}</td>
-                    </tr>
-                    <tr>
-                      <td id="item_uploader">{itemdata.uploader}</td>
-                    </tr>
-                    <tr>
-                      <td id="item_temp"></td>
-                    </tr>
-                    <tr>
-                      <td id="item_view">조회수 : {itemdata.view}</td>
-                    </tr>
-                  </table>
+                  <div>
+                    <div id="item_image">
+                      <img
+                        width="250px"
+                        height="150px"
+                        src={itemdata.thumbnail}
+                        id="item_img"
+                        alt=""
+                      />
+                    </div>
+                    <div id="item_info">
+                      <p id="item_title">{itemdata.videotitle}</p>
+                      <p id="item_uploader">{itemdata.uploader}</p>
+                      <p id="item_view">조회수 : {itemdata.view}</p>
+                      <p id="item_like">❤ {itemdata.videolike}</p>
+                    </div>
+                  </div>
                 );
               })}
           </ul>

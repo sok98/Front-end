@@ -1,7 +1,49 @@
+.scroll {
+  overflow: hidden;
+  scrollbar-width: none;
+}
 .ListPage {
   padding-top: 120px;
   padding-left: 320px;
 }
 .ListItemBox {
   padding-left: 0;
+}
+
+#item_image {
+  float: left;
+  margin-right: 20px;
+}
+#item_info {
+  height: 150px;
+}
+#item_title {
+  font-size: 25px;
+  font: bold;
+  margin-bottom: 0;
+}
+#item_uploader {
+  margin: 0;
+  margin-bottom: 30px;
+}
+#item_view,
+#item_like {
+  margin: 0;
+  color: #585858;
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .ListPage {
+    padding-top: 50px;
+    padding-left: 0;
+  }
+  /*#item_image {
+    width: 360px;
+    height: 200px;
+  }
+  #item_img {
+    width: 360px;
+    height: 200px;
+  }*/
 }
