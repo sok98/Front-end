@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import logo from "../image/namelogo_mini.PNG";
@@ -10,6 +10,19 @@ import icon_login from "../image/icon_login.png";
 import "./Header.css";
 
 function Header() {
+  const [Searchword, setSearchword] = useState("");
+
+  const onSearchHandler = (event) => {
+    setSearchword(event.currentTarget.value);
+  };
+
+  const onSearchCheckHandler = (event) => {
+    event.preventDefault();
+    console.log("핸들러 들어옴");
+    localStorage.setItem("searchword", Searchword);
+    window.location.pathname = "/List";
+  };
+
   var username = localStorage.getItem("name");
 
   const logout = () => {
@@ -37,8 +50,12 @@ function Header() {
           <img src={logo_icon} id="logo_icon_subpage" />
           {/* class->id*/}
         </Link>
-        <input id="header_search_bar" type="text"></input>
-        <Link to="/List" id="header_search_btn">
+        <input
+          id="header_search_bar"
+          type="text"
+          onChange={onSearchHandler}
+        ></input>
+        <Link to="/List" id="header_search_btn" onClick={onSearchCheckHandler}>
           <img
             width="30"
             height="30"
