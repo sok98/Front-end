@@ -91,13 +91,15 @@ function UploadVideoPage() {
                   setTimeout("6분만 기다리자", 360000);*/
             axios
               .post("http://localhost:5050/api/upload/textrank", body)
-              .then((restponse) => {
+              .then((response) => {
                 console.log("textrank axios 안");
                 console.log(response);
 
                 if (response.data.success) {
-                  alert("textrank 성공");
                   console.log("textrank 성공");
+                  console.log(response.data.keyword);
+                  localStorage.setItem("keyword", response.data.keyword);
+                  alert("textrank 성공");
                   window.location.pathname = "/UploadVideoSecond";
                 } else {
                   alert("textrank 실패");

@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from "react";
+import axios from "axios";
 import styled from "styled-components"; /*npm i styled-components */
 import { Link } from "react-router-dom";
 import {
@@ -13,6 +14,7 @@ import Header from "../../component/Header.js";
 import Navi from "../../component/Navi.js";
 
 import "./UploadVideoSecondPage.css";
+import Axios from "axios";
 
 //태그 디자인
 const TagBoxBlock = styled.div`
@@ -58,22 +60,25 @@ function UploadVideoSecondPage() {
   var video_category = localStorage.getItem("inbucket");
   var video_title = localStorage.getItem("pvideotitle");
   var video_userid = localStorage.getItem("userid");
+  var keyword = localStorage.getItem("keyword");
+
+  // 태그 배열형태로 저장
+  const tag_textrank = keyword.split("/");
 
   //태그관련
   const [input, setInput] = useState("");
-  const [localTags, setLocalTags] = useState([]);
+  const [localTags, setLocalTags] = useState(tag_textrank);
   const insertTag = useCallback(
     (tag) => {
       if (!tag) return;
       if (localTags.includes(tag)) return;
       setLocalTags([...localTags, tag]);
-      console.log("tag 콘솔");
-      console.log(tag);
     },
     [localTags]
   );
-  console.log("localTags 콘솔");
+
   console.log(localTags);
+
   const onRemove = useCallback(
     (tag) => {
       setLocalTags(localTags.filter((t) => t !== tag));
@@ -93,7 +98,28 @@ function UploadVideoSecondPage() {
   );
 
   /*submit버튼 누르면 페이지 넘어감  */
-  const onSubmit = (e) => {};
+  const onSubmit = (e) => {
+    e.preventDefault();
+    var keyword_new = localTags.join("/");
+    console.log("localTags join 결과확인");
+    console.log(keyword_new);
+    console.log(video_userid);
+    console.log(video_title);
+
+    let body = {
+      pvideotitle: video_title,
+      uploader: video_userid,
+      keyword: keyword_new,
+    };
+
+    axios
+      .post("http://localhost:5050/api/upload/submit", body)
+      .then((response) => {
+        console.log("업로드 성공?");
+        console.log(response);
+        alert(response.data);
+      });
+  };
 
   return (
     <div>
@@ -128,7 +154,7 @@ function UploadVideoSecondPage() {
         </table>
 
         <Form onSubmit={onSubmit}>
-          <TagBoxBlock>
+          <TagBoxBlock width="500px">
             <label id="tag_label">태그</label>
             <TagForm id="tag_upload" onSubmit={onSubmittag}>
               <input
@@ -142,6 +168,7 @@ function UploadVideoSecondPage() {
               </button>
             </TagForm>
             <TagList
+              width="500px"
               id="tag_list"
               tags={localTags}
               onRemove={onRemove}
