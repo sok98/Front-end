@@ -67,9 +67,13 @@ function UploadVideoSecondPage() {
       if (!tag) return;
       if (localTags.includes(tag)) return;
       setLocalTags([...localTags, tag]);
+      console.log("tag 콘솔");
+      console.log(tag);
     },
     [localTags]
   );
+  console.log("localTags 콘솔");
+  console.log(localTags);
   const onRemove = useCallback(
     (tag) => {
       setLocalTags(localTags.filter((t) => t !== tag));
@@ -90,6 +94,7 @@ function UploadVideoSecondPage() {
 
   /*submit버튼 누르면 페이지 넘어감  */
   const onSubmit = (e) => {};
+
   return (
     <div>
       <Header />
