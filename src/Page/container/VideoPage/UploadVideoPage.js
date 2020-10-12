@@ -14,6 +14,7 @@ const CatogoryOptions = [
 ];
 
 function UploadVideoPage() {
+  var user = localStorage.getItem("userid");
   const [VideoTitle, setVideoTitle] = useState("");
   const [Categories, setCategories] = useState("ko-kr");
   const [FilePath, setFilePath] = useState(null);
@@ -76,7 +77,7 @@ function UploadVideoPage() {
             let body = {
               inbucket: localStorage.getItem("inbucket"),
               pvideotitle: localStorage.getItem("pvideotitle"),
-              uploader: localStorage.getItem("userid"),
+              uploader: user,
             };
 
             /*axios //stt axios
@@ -118,52 +119,68 @@ function UploadVideoPage() {
 
   return (
     <div>
-      <Header />
-      <Navi />
-      <div class="UploadVideoPage">
-        <Title level={2} id="uploadpage_title">
-          {" "}
-          Upload Video
-        </Title>
+      {user ? (
+        <div>
+          <Header />
+          <Navi />
+          <div class="UploadVideoPage">
+            <Title level={2} id="uploadpage_title">
+              {" "}
+              Upload Video
+            </Title>
 
-        <form onSubmit={onSubmit}>
-          {/*영상*/}
-          <br />
-          <br />
-          <label id="video_label">Video</label>
-          <br />
-          <input id="video_input" type="file" onChange={onVideoChange} />
+            <form onSubmit={onSubmit}>
+              {/*영상*/}
+              <br />
+              <br />
+              <label id="video_label">Video</label>
+              <br />
+              <input id="video_input" type="file" onChange={onVideoChange} />
 
-          {/*제목*/}
-          <br />
-          <br />
-          <label id="title_label">
-            Tittle <span id="title_warning"> (띄어쓰기 불가)</span>
-          </label>
-          <br />
-          <input id="title_input" onChange={onTitleChange} value={VideoTitle} />
+              {/*제목*/}
+              <br />
+              <br />
+              <label id="title_label">
+                Tittle <span id="title_warning"> (띄어쓰기 불가)</span>
+              </label>
+              <br />
+              <input
+                id="title_input"
+                onChange={onTitleChange}
+                value={VideoTitle}
+              />
 
-          {/*카테고리*/}
-          <br />
-          <br />
-          <label id="category_label">Category</label>
-          <br />
-          <select id="category_select" onChange={onCategoryChange}>
-            {CatogoryOptions.map((item, index) => (
-              <option key={index} value={item.value}>
-                {item.label}
-              </option>
-            ))}
-          </select>
+              {/*카테고리*/}
+              <br />
+              <br />
+              <label id="category_label">Category</label>
+              <br />
+              <select id="category_select" onChange={onCategoryChange}>
+                {CatogoryOptions.map((item, index) => (
+                  <option key={index} value={item.value}>
+                    {item.label}
+                  </option>
+                ))}
+              </select>
 
-          {/*버튼*/}
-          <br />
-          <br />
-          <button id="uploadpage_submit_btn" type="submit">
-            Submit
-          </button>
-        </form>
-      </div>
+              {/*버튼*/}
+              <br />
+              <br />
+              <button id="uploadpage_submit_btn" type="submit">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <Header />
+          <Navi />
+          <div class="UploadVideoPage">
+            <h2>로그인 후 이용 가능합니다.</h2>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

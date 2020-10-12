@@ -118,6 +118,7 @@ function UploadVideoSecondPage() {
         console.log("업로드 성공?");
         console.log(response);
         alert(response.data);
+        window.location.pathname = "/UploadVideoThird";
       });
   };
 
