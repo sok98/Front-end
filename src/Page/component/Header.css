@@ -25,10 +25,12 @@
 }
 #header_search_btn {
   position: fixed;
-  width: 10%;
+  width: 30px;
   height: 33px;
   margin-left: 1120px; /*300+800  serch_bar랑margin20*/
   margin-top: 30px;
+  background-color: #fab404;
+  border: 0;
 }
 #header_mypage_btn {
   position: fixed;

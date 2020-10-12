@@ -1,16 +1,33 @@
-.top_video #top_video_text {
-  margin: 0px;
+.TopVideoBox {
+  width: 99%;
+  margin: 0.5rem auto;
+  margin-top: 0px;
 }
-
-.view1 {
-  width: 230px;
+#topvideo_thumb_title {
+  position: relative;
+}
+#topvideo_thumb {
+  width: 100%;
   height: 150px;
-  padding: 7px 13px;
 }
-.view1 #view_title {
-  display: inline;
-  margin: 0px;
+#topvideo_title {
+  margin-top: 0px;
 }
-
+.topsix_out {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: repeat(2, 1fr);
+}
+#topvidebox_title {
+  margin: 10px;
+  color: gray;
+}
 @media screen and (max-width: 768px) {
+  .topsix_out {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: repeat(1, 1fr);
+  }
 }

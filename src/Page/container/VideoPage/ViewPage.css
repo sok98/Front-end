@@ -1,10 +1,29 @@
 .ViewPage {
   padding-top: 120px;
   padding-left: 320px;
+  width: 850px;
 }
 #videoframe1 {
   width: 850px;
   height: 500px;
+}
+#video_name {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+#video_like_btn {
+  background-color: #fac43c;
+  border: 2px solid #fac43c;
+  font-size: medium;
+  color: white;
+  border-radius: 20px;
+}
+
+#video_uploader {
+  margin-right: 4%;
+}
+#video_view {
+  margin-right: 4%;
 }
 
 /*추가한것*/
@@ -12,12 +31,16 @@
   .ViewPage {
     padding-top: 50px;
     padding-left: 0;
+    width: 360px;
   }
   #videoframe1 {
     width: 360px;
     height: 240px;
   }
-  #video_name {
-    font-size: medium;
+  #video_uploader {
+    margin-right: 10%;
+  }
+  #video_view {
+    margin-right: 15%;
   }
 }

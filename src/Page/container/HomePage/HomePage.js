@@ -48,7 +48,7 @@ function HomePage() {
         {/*왼쪽 창*/}
         <div class="column_left">
           {/*검색바*/}
-          <div class="search">
+          <form onSubmit={onSearchCheckHandler} class="search">
             <input
               id="search_bar"
               type="text"
@@ -63,7 +63,7 @@ function HomePage() {
                 id="icon_search_orange"
               />
             </Link>
-          </div>
+          </form>
           {/*조회수 TOP*/}
           <div class="top_video_box">
             <TopVideoBox />

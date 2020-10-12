@@ -62,6 +62,12 @@ function UploadVideoSecondPage() {
   var video_userid = localStorage.getItem("userid");
   var keyword = localStorage.getItem("keyword");
 
+  if (video_category == "en-us") {
+    video_category = "영어영상";
+  } else if (video_category == "ko-kr") {
+    video_category = "한국영상";
+  }
+
   // 태그 배열형태로 저장
   const tag_textrank = keyword.split("/");
 
@@ -156,7 +162,9 @@ function UploadVideoSecondPage() {
 
         <Form onSubmit={onSubmit}>
           <TagBoxBlock width="500px">
-            <label id="tag_label">태그</label>
+            <label id="tag_label">
+              태그 <span id="tag_warning"> (누르면 삭제됩니다)</span>
+            </label>
             <TagForm id="tag_upload" onSubmit={onSubmittag}>
               <input
                 id="tag_input"

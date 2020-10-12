@@ -25,6 +25,9 @@
 #tag_label {
   color: #fab404;
 }
+#tag_warning {
+  color: #a7a7a7;
+}
 #tag_upload {
   width: 500px;
   /*height: 30px;*/
