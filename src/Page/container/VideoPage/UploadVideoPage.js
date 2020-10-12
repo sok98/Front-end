@@ -5,6 +5,7 @@ import Header from "../../component/Header.js";
 import Navi from "../../component/Navi.js";
 import "./UploadVideoPage.css";
 import { delay } from "lodash";
+import Modal from "../../container/VideoPage/Modal.js";
 
 const { Title } = Typography;
 
@@ -18,6 +19,12 @@ function UploadVideoPage() {
   const [VideoTitle, setVideoTitle] = useState("");
   const [Categories, setCategories] = useState("ko-kr");
   const [FilePath, setFilePath] = useState(null);
+
+  /*Modal */
+  const [modalVisible, setModalVisible] = useState(false);
+  const closeModal = () => {
+    setModalVisible(false);
+  };
 
   /* 비디오 (이벤트)*/
   const onVideoChange = (e) => {
@@ -46,6 +53,14 @@ function UploadVideoPage() {
     if (VideoTitle.indexOf(" ") !== -1) {
       alert("title을 다시 확인해주세요.");
     } else {
+      /*Modal*/
+      setModalVisible(true); //
+
+      console.log(FilePath);
+      console.log(Categories);
+      console.log(VideoTitle);
+      console.log(localStorage.getItem("name"));
+
       //formData
       var formData = new FormData();
       formData.append("videofile", FilePath);
@@ -169,6 +184,22 @@ function UploadVideoPage() {
               <button id="uploadpage_submit_btn" type="submit">
                 Submit
               </button>
+              {modalVisible && (
+                <Modal
+                  id="modal_message"
+                  visible={modalVisible}
+                  closable={false}
+                  maskClosable={true}
+                  onClose={closeModal}
+                >
+                  업로드 성공 창이 나오기 전까지 잠시만 기다려주세요
+                </Modal>
+              )}
+            </form>
+            {/*추가*/}
+            <form id="media_message">
+              <br />
+              <label id="media_label">업로드는 pc를 이용해주세요</label>
             </form>
           </div>
         </div>

@@ -51,21 +51,23 @@ function Header() {
           {/* class->id*/}
         </Link>
         <form onSubmit={onSearchCheckHandler}>
-          <div>
-            <input
-              id="header_search_bar"
-              type="text"
-              onChange={onSearchHandler}
-            ></input>
-            <button id="header_search_btn">
-              <img
-                width="30"
-                height="30"
-                src={icon_search}
-                id="icon_search_white"
-              />
-            </button>
-          </div>
+          <input
+            id="header_search_bar"
+            type="text"
+            onChange={onSearchHandler}
+          ></input>
+          <Link
+            to="/List"
+            id="header_search_btn"
+            onClick={onSearchCheckHandler}
+          >
+            <img
+              width="30"
+              height="30"
+              src={icon_search}
+              id="icon_search_white"
+            />
+          </Link>
         </form>
         <div>
           {username ? (

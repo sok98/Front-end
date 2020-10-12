@@ -19,7 +19,7 @@ const App = () => {
       <Route path="/" component={HomePage} exact={true} />
       <Route path="/Login" component={LoginPage} />
       <Route path="/Join" component={JoinPage} />
-      <Route path="/View" component={ViewPage} />
+      <Route path="/View/:videoid" component={ViewPage} />
       <Route path="/List" component={ListPage} />
       <Route path="/Admin" component={AdminPage} />
       <Route path="/Mypage" component={MyPage} />

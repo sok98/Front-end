@@ -43,14 +43,29 @@
   height: "30px";
   font-size: large;
 }
-
+#media_message {
+  display: none;
+}
 @media (max-width: 1000px) {
   .UploadVideoPage {
     padding-left: 320px;
   }
 }
 @media (max-width: 480px) {
+  #upload_form {
+    display: none;
+  }
   .UploadVideoPage {
-    padding-left: 0;
+    padding-top: 120px;
+    padding-left: 20px;
+    color: #fab404;
+    text-align: center;
+  }
+  #media_message {
+    display: inline;
+    text-align: center;
+  }
+  #media_label {
+    color: red;
   }
 }
