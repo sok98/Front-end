@@ -62,13 +62,17 @@
   }
 
   #header_search_bar {
-    width: 58%;
+    top: 0;
+    left: 53px;
+    width: 60%;
     height: 30px;
     margin-top: 10px;
     margin-left: 0px;
   }
   #header_search_btn {
-    width: 20%;
+    top: 0;
+    left: 53px;
+    width: 10%;
     height: 30px;
     margin-left: 63%;
     margin-top: 10px;
