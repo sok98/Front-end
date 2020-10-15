@@ -3,20 +3,19 @@ import React, { Component } from "react";
 import Header from "../../component/Header.js";
 import Navi from "../../component/Navi.js";
 
-import "./AdminPage.css";
-
-class AdminPage extends Component {
+class Admin3Page extends Component {
   render() {
     return (
       <div>
         <Header />
         <Navi />
         <div class="AdminPage">
-          <p>Admin1페이지</p>
-          <p>영상처리 목록 리스트</p>
+          <p>Admin3페이지</p>
+          <p>변환 처리 중입니다 ...</p>
+          <p>변환 처리가 완료되면 자동으로 다음 화면으로 넘어갑니다.</p>
         </div>
       </div>
     );
   }
 }
-export default AdminPage;
+export default Admin3Page;
