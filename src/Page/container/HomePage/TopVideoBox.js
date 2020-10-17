@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Avatar, Col, Typography, Row } from "antd";
+import { Typography } from "antd";
 import axios from "axios";
 import "./TopVideoBox.css";
 const { Title } = Typography;

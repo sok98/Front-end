@@ -9,6 +9,9 @@ import MyPage from "./Page/container/UserPage/MyPage";
 import ChangePage from "./Page/container/UserPage/ChangePage";
 import ListPage from "./Page/container/VideoPage/ListPage";
 import AdminPage from "./Page/container/AdminPage/AdminPage";
+import Admin2Page from "./Page/container/AdminPage/Admin2Page";
+import Admin3Page from "./Page/container/AdminPage/Admin3Page";
+import Admin4Page from "./Page/container/AdminPage/Admin4Page";
 import UploadVideoPage from "./Page/container/VideoPage/UploadVideoPage";
 import UploadVideoSecondPage from "./Page/container/VideoPage/UploadVideoSecondPage";
 import UploadVideoThirdPage from "./Page/container/VideoPage/UploadVideoThirdPage";
@@ -22,6 +25,9 @@ const App = () => {
       <Route path="/View/:videoid" component={ViewPage} />
       <Route path="/List" component={ListPage} />
       <Route path="/Admin" component={AdminPage} />
+      <Route path="/Admin2" component={Admin2Page} />
+      <Route path="/Admin3" component={Admin3Page} />
+      <Route path="/Admin4" component={Admin4Page} />
       <Route path="/Mypage" component={MyPage} />
       <Route path="/Change" component={ChangePage} />
       <Route path="/UploadVideo" component={UploadVideoPage} />
