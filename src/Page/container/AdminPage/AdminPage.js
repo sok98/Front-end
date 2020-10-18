@@ -28,13 +28,36 @@ class AdminPage extends Component {
   }
 
   render() {
+    const { VideoList } = this.state;
+    console.log("VideoList 확인");
+    console.log(VideoList);
     return (
       <div>
         <Header />
         <Navi />
         <div class="AdminPage">
-          <p>Admin1페이지</p>
           <p>영상처리 목록 리스트</p>
+          <table border="1">
+            <th>
+              <td>videoid</td>
+              <td>카테고리</td>
+              <td>제목</td>
+              <td>게시자</td>
+            </th>
+            {VideoList &&
+              VideoList.map((itemdata) => {
+                return (
+                  <tr>
+                    <a href={`/Admin2/${itemdata.videoid}`}>
+                      <td>{itemdata.videoid}</td>
+                      <td>{itemdata.categoryname}</td>
+                      <td>{itemdata.videotitle}</td>
+                      <td>{itemdata.uploader}</td>
+                    </a>
+                  </tr>
+                );
+              })}
+          </table>
         </div>
       </div>
     );
