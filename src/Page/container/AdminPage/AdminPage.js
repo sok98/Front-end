@@ -17,6 +17,7 @@ class AdminPage extends Component {
     axios.get("http://localhost:5050/api/admin/list").then((response) => {
       console.log("axios 들어옴");
       console.log(response);
+
       this.setState({
         VideoList: response.data,
       });
@@ -46,9 +47,18 @@ class AdminPage extends Component {
             </th>
             {VideoList &&
               VideoList.map((itemdata) => {
+                const setidhandler = (value) => {
+                  console.log("videoid 값 넘겨주기");
+                  console.log(value);
+                  localStorage.setItem("videoid", value);
+                };
                 return (
                   <tr>
-                    <a href={`/Admin2/${itemdata.videoid}`}>
+                    <a
+                      /*href={`/Admin2/${itemdata.videoid}`}*/
+                      value={itemdata.videoid}
+                      onClick={setidhandler}
+                    >
                       <td>{itemdata.videoid}</td>
                       <td>{itemdata.categoryname}</td>
                       <td>{itemdata.videotitle}</td>
