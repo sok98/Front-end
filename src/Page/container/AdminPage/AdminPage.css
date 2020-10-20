@@ -2,3 +2,22 @@
   padding-top: 120px;
   padding-left: 320px;
 }
+.table_body {
+  margin-right: 0;
+  right: 0;
+}
+.table_line {
+  width: 70%;
+}
+#t_id {
+  width: 10%;
+}
+#t_ctg {
+  width: 15%;
+}
+#t_title {
+  width: 50%;
+}
+#t_uploader {
+  width: 15%;
+}

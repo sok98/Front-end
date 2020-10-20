@@ -5,7 +5,8 @@ import Header from "../../component/Header.js";
 import Navi from "../../component/Navi.js";
 
 class Admin2Page extends Component {
-  // videoid = localStorage.getItem("videoid");
+  videoid = localStorage.getItem("videoid");
+
   state = {
     video: "",
     subtitle: "",
@@ -13,9 +14,10 @@ class Admin2Page extends Component {
 
   loadsub = async () => {
     console.log("loadList 들어옴");
-
+    console.log(localStorage.getItem("videoid"));
+    console.log(this.videoid);
     axios
-      .get("http://localhost:5050/api/admin/edit" /*+ videoid*/)
+      .get("http://localhost:5050/api/admin/edit/" + this.videoid)
       .then((response) => {
         console.log("axios 들어옴");
         console.log(response);
@@ -35,7 +37,7 @@ class Admin2Page extends Component {
       <div>
         <Header />
         <Navi />
-        <div class="Admin2Page">
+        <div className="Admin2Page">
           <p>Admin2페이지</p>
           <p>비디오 영상과 csv 파일</p>
         </div>

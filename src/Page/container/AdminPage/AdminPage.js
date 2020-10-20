@@ -12,12 +12,8 @@ class AdminPage extends Component {
   };
 
   loadList = async () => {
-    console.log("loadList 들어옴");
-
     axios.get("http://localhost:5050/api/admin/list").then((response) => {
-      console.log("axios 들어옴");
-      console.log(response);
-
+      localStorage.setItem("videoid", response.data.videoid);
       this.setState({
         VideoList: response.data,
       });
@@ -30,39 +26,36 @@ class AdminPage extends Component {
 
   render() {
     const { VideoList } = this.state;
-    console.log("VideoList 확인");
-    console.log(VideoList);
+
     return (
       <div>
         <Header />
         <Navi />
         <div class="AdminPage">
           <p>영상처리 목록 리스트</p>
-          <table border="1">
-            <th>
-              <td>videoid</td>
-              <td>카테고리</td>
-              <td>제목</td>
-              <td>게시자</td>
+          <table border="1" class="table_body">
+            <th class="table_line">
+              <td id="t_id">videoid</td>
+              <td id="t_ctg">카테고리</td>
+              <td id="t_title">제목</td>
+              <td id="t_uploader">게시자</td>
             </th>
             {VideoList &&
               VideoList.map((itemdata) => {
-                const setidhandler = (value) => {
-                  console.log("videoid 값 넘겨주기");
-                  console.log(value);
-                  localStorage.setItem("videoid", value);
+                const setidhandler = () => {
+                  localStorage.setItem("videoid", itemdata.videoid);
                 };
                 return (
-                  <tr>
+                  <tr class="table_line">
                     <a
-                      /*href={`/Admin2/${itemdata.videoid}`}*/
-                      value={itemdata.videoid}
+                      href={`/Admin2/${itemdata.videoid}`}
                       onClick={setidhandler}
+                      class="table_line"
                     >
-                      <td>{itemdata.videoid}</td>
-                      <td>{itemdata.categoryname}</td>
-                      <td>{itemdata.videotitle}</td>
-                      <td>{itemdata.uploader}</td>
+                      <td id="t_id">{itemdata.videoid}</td>
+                      <td id="t_ctg">{itemdata.categoryname}</td>
+                      <td id="t_title">{itemdata.videotitle}</td>
+                      <td id="t_uploader">{itemdata.uploader}</td>
                     </a>
                   </tr>
                 );
