@@ -25,9 +25,9 @@ const App = () => {
       <Route path="/View/:videoid" component={ViewPage} />
       <Route path="/List" component={ListPage} />
       <Route path="/Admin" component={AdminPage} />
-      <Route path="/Admin2" component={Admin2Page} />
-      <Route path="/Admin3" component={Admin3Page} />
-      <Route path="/Admin4" component={Admin4Page} />
+      <Route path="/Admin2/:videoid" component={Admin2Page} />
+      <Route path="/Admin3/:videoid" component={Admin3Page} />
+      <Route path="/Admin4/:videoid" component={Admin4Page} />
       <Route path="/Mypage" component={MyPage} />
       <Route path="/Change" component={ChangePage} />
       <Route path="/UploadVideo" component={UploadVideoPage} />

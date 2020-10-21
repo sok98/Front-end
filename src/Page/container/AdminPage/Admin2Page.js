@@ -1,48 +1,47 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import Header from "../../component/Header.js";
 import Navi from "../../component/Navi.js";
 
-class Admin2Page extends Component {
-  videoid = localStorage.getItem("videoid");
+import "./Admin2Page.css";
 
-  state = {
-    video: "",
-    subtitle: "",
-  };
+function Admin2Page(props) {
+  const videoid = props.match.params.videoid;
+  const [Video, setVideo] = useState([]);
 
-  loadsub = async () => {
-    console.log("loadList 들어옴");
-    console.log(localStorage.getItem("videoid"));
-    console.log(this.videoid);
+  useEffect(() => {
     axios
-      .get("http://localhost:5050/api/admin/edit/" + this.videoid)
+      .get("http://localhost:5050/api/admin/edit/" + videoid)
       .then((response) => {
         console.log("axios 들어옴");
-        console.log(response);
-        this.setState({
-          video: response.data,
-          subtitle: response.data,
-        });
+        console.log(response.data);
+        if (response.data) {
+          setVideo(response.data);
+          console.log("setVido 확인");
+          console.log(Video);
+        } else {
+          alert("Failed to get video");
+        }
       });
+  }, []);
+
+  const submitHandler = () => {
+    console.log("submotHandler");
+    window.location.pathname = "/Admin3/" + videoid;
   };
 
-  componentDidMount() {
-    this.loadsub();
-  }
-
-  render() {
-    return (
-      <div>
-        <Header />
-        <Navi />
-        <div className="Admin2Page">
-          <p>Admin2페이지</p>
-          <p>비디오 영상과 csv 파일</p>
-        </div>
+  return (
+    <div>
+      <Header />
+      <Navi />
+      <div className="Admin2Page">
+        <p>Admin2페이지</p>
+        <p>비디오 영상과 csv 파일</p>
+        <video src={`${Video.videolink}`} controls></video>
+        <button onClick={submitHandler}>다음</button>
       </div>
-    );
-  }
+    </div>
+  );
 }
 export default Admin2Page;

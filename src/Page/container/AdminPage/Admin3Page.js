@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import Header from "../../component/Header.js";
 import Navi from "../../component/Navi.js";
 
+import "./Admin2Page.css";
+
 class Admin3Page extends Component {
   render() {
     return (

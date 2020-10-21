@@ -27,15 +27,11 @@ function ViewPage(props) {
     axios
       .post("http://localhost:5050/api/detail/view", body)
       .then((response) => {
-        console.log("axio된건가?");
-        console.log(response);
         if (response.data) {
-          console.log("if문 안");
-
-          var videolink = response.data.videolink;
-          console.log(videolink);
-
           setVideo(response.data);
+          console.log("setvideo 확인");
+          console.log(Video);
+          console.log(Video.videolink);
         } else {
           alert("Failed to get video Info");
         }
