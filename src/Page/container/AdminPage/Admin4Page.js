@@ -10,7 +10,7 @@ function Admin4Page(props) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5050/api/admin/change" + videoid)
+      .get("http://localhost:5050/api/admin/confirm" + videoid)
       .then((response) => {
         console.log("axios 들어옴");
         console.log(response.data);
@@ -26,7 +26,7 @@ function Admin4Page(props) {
 
   const submitHandler = () => {
     axios
-      .get("http://localhost:5050/api/admin/change" + videoid)
+      .get("http://localhost:5050/api/admin/complete" + videoid)
       .then((response) => {
         console.log("axios 들어옴");
         console.log(response);
