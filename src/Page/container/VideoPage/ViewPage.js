@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import axios from "axios";
 import icon_like from "../../image/like.png";
 
@@ -11,6 +10,7 @@ import "./ViewPage.css";
 function ViewPage(props) {
   const videoId = props.match.params.videoid;
   const [Video, setVideo] = useState([]);
+  console.log(videoId);
 
   var userlogin = localStorage.getItem("userid");
   if (userlogin == null) {
@@ -27,17 +27,19 @@ function ViewPage(props) {
     axios
       .post("http://localhost:5050/api/detail/view", body)
       .then((response) => {
+        console.log("axios 들어옴");
+
         if (response.data) {
+          console.log(response.data);
           setVideo(response.data);
-          console.log("setvideo 확인");
-          console.log(Video);
-          console.log(Video.videolink);
         } else {
           alert("Failed to get video Info");
         }
       });
   }, []);
-
+  console.log("Video 값 확인");
+  console.log(Video);
+  console.log(Video.videolink);
   /*좋아요 (이벤트)*/
   const onSubmit = (event) => {
     event.preventDefault();

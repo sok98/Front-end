@@ -13,16 +13,18 @@ function Admin4Page(props) {
       .get("http://localhost:5050/api/admin/confirm" + videoid)
       .then((response) => {
         console.log("axios 들어옴");
-        console.log(response.data);
+
         if (response.data) {
+          console.log(response.data);
           setVideo(response.data);
-          console.log("setVido 확인");
-          console.log(Video);
         } else {
           alert("Failed to get video");
         }
       });
   }, []);
+  console.log("Video 값 확인");
+  console.log(Video);
+  console.log(Video.videolink);
 
   const submitHandler = () => {
     axios
