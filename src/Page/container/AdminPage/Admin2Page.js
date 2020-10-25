@@ -4,7 +4,7 @@ import axios from "axios";
 import Header from "../../component/Header.js";
 import Navi from "../../component/Navi.js";
 
-import "./Admin2Page.css";
+import "./Admin.css";
 
 function Admin2Page(props) {
   const videoid = props.match.params.videoid;
@@ -48,21 +48,33 @@ function Admin2Page(props) {
       <Header />
       <Navi />
 
-      <div className="Admin2Page">
-        <p>Admin2페이지</p>
-        <p>비디오 영상과 csv 파일</p>
+      <div className="AdminPage">
+        <h2 id="admin2_title">스크립트 확인하기</h2>
         <video
           src={`${Video.videolink}`}
           controls
-          width="300px"
-          height="200px"
+          width="850px"
+          height="500px"
         ></video>
         <div>
-          <a href={`${Video.subtitle}`}>csv 파일 다운로드 하기</a>
-          <div>수정된 csv 파일 업로드</div>
-          <input type="file" accept=".csv" onChange={onCSVChange} />
+          <h3>
+            {" "}
+            1.{" "}
+            <span>
+              <a href={`${Video.subtitle}`}>스크립트를 다운로드</a>
+            </span>
+            해주세요.
+          </h3>
+          <h3>2. 위 동영상과 비교하며 스크립트를 확인해주세요.</h3>
+          <h3>3. 수정사항이 있으면 변경 후 저장해주세요.</h3>
+          <h3>
+            4. 확인이 완료되었으면 확인 완료 버튼을 눌러주세요.
+            <button onClick={submitHandler} id="admin2_btn">
+              확인 완료
+            </button>
+          </h3>
+          <br />
         </div>
-        <button onClick={submitHandler}>다음</button>
       </div>
     </div>
   );

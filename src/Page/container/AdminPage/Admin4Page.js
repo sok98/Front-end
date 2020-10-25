@@ -43,9 +43,12 @@ function Admin4Page(props) {
       <Header />
       <Navi />
       <div class="AdminPage">
-        <p>영상 최종 확인</p>
-        <video src={`${Video.videolink}`} controls></video>
-        <button onClick={submitHandler}>확인</button>
+        <h2 id="admin4_title">영상 최종 확인</h2>
+        <video src={`${Video.videolink}`} controls width="850px"></video>
+        <br />
+        <button id="admin4_btn" onClick={submitHandler}>
+          영상 게시
+        </button>
       </div>
     </div>
   );
