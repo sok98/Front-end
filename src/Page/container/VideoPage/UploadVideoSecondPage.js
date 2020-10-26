@@ -23,6 +23,12 @@ const TagBoxBlock = styled.div`
 const TagForm = styled.form`
   margin-top: 0;
 `;
+const TagListBlock = styled.div`
+  display: flex;
+  width: 500px;
+  margin-top: 0.5rem;
+  overflow: auto;
+`;
 const Tag = styled.div`
   margin: 5px;
   border: 1px solid gray;
@@ -31,11 +37,6 @@ const Tag = styled.div`
   background: #f0f0f0;
   color: black;
   cursor: pointer;
-`;
-const TagListBlock = styled.div`
-  display: flex;
-  width: 500px;
-  margin-top: 0.5rem;
 `;
 
 // React.memo를 사용하여 tag 값이 바뀔 때만 리렌더링되도록 처리
@@ -123,7 +124,6 @@ function UploadVideoSecondPage() {
       .then((response) => {
         console.log("업로드 성공?");
         console.log(response);
-        alert(response.data);
         window.location.pathname = "/UploadVideoThird";
       });
   };
@@ -183,6 +183,7 @@ function UploadVideoSecondPage() {
               onRemove={onRemove}
             ></TagList>
           </TagBoxBlock>
+
           {/*버튼*/}
           <br />
           <Link to="/UploadVideoThird">

@@ -32,17 +32,19 @@ function LoginPage({ history }) {
       .then((response) => {
         //console.log(url);
         console.log(response);
+        console.log(response.data.name);
         if (response.data.name) {
           localStorage.setItem("userid", response.data.userid);
           localStorage.setItem("password", response.data.password);
           localStorage.setItem("name", response.data.name);
           localStorage.setItem("birth", response.data.birth);
           localStorage.setItem("isadmin", response.data.isadmin);
-          alert("로그인 성공");
+          alert("로그인되었습니다.");
           console.log(response.data);
           history.push("/");
         } else {
-          alert(response.data); /*message: 가입되지 않은 회원, 비번 다름 등*/
+          console.log("alert 확인");
+          alert(response.data.message);
         }
       });
   };

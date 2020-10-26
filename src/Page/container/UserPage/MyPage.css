@@ -2,28 +2,50 @@
   padding-top: 120px;
   padding-left: 320px;
 }
+.keyword_title {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+}
 .left_mypage {
   float: left;
-  width: 50%;
+  width: auto;
+  height: auto;
 }
 .right_mypage {
   float: left;
-  width: 50%;
+  width: auto;
+  height: auto;
+  margin-left: 10%;
+}
+.myupload_mypage {
+  margin-top: 280px;
+  width: 90%;
+  height: auto;
+}
+#please {
+  color: #fac43c;
+  text-align: center;
 }
 /*추가 768 -> 480으로 change*/
 @media (max-width: 480px) {
   .MyPage {
-    padding-top: 150px;
-    padding-left: 10px;
+    padding-top: 52px;
+    padding-left: 0px;
   }
-  .left_mypage {
-    float: left;
+  #word_cloud {
     width: 100%;
-    height: 50%;
+    height: 260px;
   }
+
   .right_mypage {
-    float: left;
-    width: 100%;
-    height: 50%;
+    margin-left: 0px;
+    width: auto;
+    height: auto;
+  }
+  .myupload_mypage {
+    margin-top: 500px;
+    width: auto;
+    height: auto;
   }
 }

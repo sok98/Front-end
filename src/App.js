@@ -15,6 +15,10 @@ import Admin4Page from "./Page/container/AdminPage/Admin4Page";
 import UploadVideoPage from "./Page/container/VideoPage/UploadVideoPage";
 import UploadVideoSecondPage from "./Page/container/VideoPage/UploadVideoSecondPage";
 import UploadVideoThirdPage from "./Page/container/VideoPage/UploadVideoThirdPage";
+import CategoryEngPage from "./Page/container/VideoPage/CategoryEngPage";
+import CategoryKorPage from "./Page/container/VideoPage/CategoryKorPage";
+import UserLikePage from "./Page/container/VideoPage/UserLikePage";
+import UserWatchedPage from "./Page/container/VideoPage/UserWatchedPage";
 
 const App = () => {
   return (
@@ -33,6 +37,10 @@ const App = () => {
       <Route path="/UploadVideo" component={UploadVideoPage} />
       <Route path="/UploadVideoSecond" component={UploadVideoSecondPage} />
       <Route path="/UploadVideoThird" component={UploadVideoThirdPage} />
+      <Route path="/CategoryEng" component={CategoryEngPage} />
+      <Route path="/CategoryKor" component={CategoryKorPage} />
+      <Route path="/UserLike" component={UserLikePage} />
+      <Route path="/UserWatched" component={UserWatchedPage} />
     </div>
   );
 };

@@ -1,0 +1,46 @@
+.useruploadbox {
+  width: 90%;
+  /*margin: 0.5rem auto;*/
+  margin-left: 0;
+  margin-top: 0px;
+  overflow: auto;
+}
+#useruploadbox_thumb_title {
+  position: relative;
+}
+#userupload_thumb {
+  width: 100%;
+  height: 150px;
+}
+#userupload_titlee {
+  margin-bottom: 0px;
+}
+.useruploadbox_out {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 7px;
+  grid-auto-rows: repeat(50, 1fr);
+}
+#userupload_title {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+#userupload__view {
+  margin-bottom: 0px;
+}
+
+@media screen and (max-width: 768px) {
+  .useruploadbox {
+    width: 97%;
+    /*margin: 0.5rem auto;*/
+    margin-left: 1%;
+    margin-top: 0px;
+    overflow: auto;
+  }
+  .useruploadbox_out {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 5px;
+    grid-auto-rows: repeat(1, 1fr);
+  }
+}

@@ -84,7 +84,6 @@ function UploadVideoPage() {
           console.log(response);
 
           if (response.data.success) {
-            alert("업로드 성공");
             localStorage.setItem("inbucket", Categories);
             localStorage.setItem("pvideotitle", VideoTitle);
             localStorage.setItem("thumbnail", response.data.thumbnail);
@@ -102,7 +101,6 @@ function UploadVideoPage() {
                 console.log(response);
 
                 if (response.data.success) {
-                  alert("stt 성공");
                   console.log("stt 성공");
                   //setTimeout("6분만 기다리자", 360000);
                   axios
@@ -115,18 +113,15 @@ function UploadVideoPage() {
                         console.log("textrank 성공");
                         console.log(response.data.keyword);
                         localStorage.setItem("keyword", response.data.keyword);
-                        alert("textrank 성공");
+
                         window.location.pathname = "/UploadVideoSecond";
                       } else {
-                        alert("textrank 실패");
                       }
                     });
                 } else {
-                  alert("stt 실패");
                 }
               });
           } else {
-            alert("업로드 실패");
           }
         });
     }
@@ -192,7 +187,7 @@ function UploadVideoPage() {
                   maskClosable={true}
                   onClose={closeModal}
                 >
-                  업로드 성공 창이 나오기 전까지 잠시만 기다려주세요
+                  페이지가 넘어갈 때까지 잠시만 기다려주세요.
                 </Modal>
               )}
             </form>

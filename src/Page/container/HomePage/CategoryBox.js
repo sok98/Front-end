@@ -9,14 +9,14 @@ import "./CategoryBox.css";
 
 const CategoryBox = () => (
   <div className="CategoryBox">
-    <Link to="/List">
+    <Link to="/CategoryKor">
       <div id="c_btn">
         <img width="80" height="70" src={icon_kor} id="c_icon" />
         <span id="c_tag">한국 영상</span>
       </div>
     </Link>
 
-    <Link to="/List">
+    <Link to="/CategoryEng">
       <div id="c_btn">
         <img width="80" height="70" src={icon_eng} id="c_icon" />
         <span id="c_tag">영어 영상</span>

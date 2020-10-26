@@ -7,9 +7,20 @@
   width: 850px;
   height: 500px;
 }
+hr {
+  display: block;
+  unicode-bidi: isolate;
+  margin-block-start: 0.5em;
+  margin-block-end: 0em;
+  margin-inline-start: auto;
+  margin-inline-end: 0px;
+  overflow: hidden;
+  border-style: inset;
+  border-width: 1px;
+}
 #video_name {
   margin-top: 0px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 #video_like_btn {
   background-color: #fac43c;
@@ -20,27 +31,33 @@
 }
 
 #video_uploader {
-  margin-right: 4%;
+  margin-right: 3%;
 }
 #video_view {
-  margin-right: 4%;
+  margin-right: 3%;
+}
+.view_info2 {
+  display: none;
 }
 
 /*추가한것*/
 @media (max-width: 480px) {
   .ViewPage {
     padding-top: 50px;
-    padding-left: 0;
-    width: 360px;
+    padding-left: 0px;
+    width: auto;
   }
   #videoframe1 {
     width: 360px;
     height: 240px;
   }
-  #video_uploader {
-    margin-right: 10%;
+  .view_info {
+    display: none;
   }
-  #video_view {
-    margin-right: 15%;
+  .view_info2 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 3%;
+    grid-auto-rows: repeat(1, 1fr);
   }
 }

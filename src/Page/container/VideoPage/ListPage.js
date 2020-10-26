@@ -50,20 +50,22 @@ class ListPage extends Component {
                 return (
                   <div>
                     <a href={`/View/${itemdata.videoid}`}>
-                      <div id="item_image">
-                        <img
-                          width="250px"
-                          height="150px"
-                          src={itemdata.thumbnail}
-                          id="item_img"
-                          alt=""
-                        />
-                      </div>
-                      <div id="item_info">
-                        <p id="item_title">{itemdata.videotitle}</p>
-                        <p id="item_uploader">{itemdata.uploader}</p>
-                        <p id="item_view">조회수 : {itemdata.view}</p>
-                        <p id="item_like">❤ {itemdata.videolike}</p>
+                      <div class="aaa">
+                        <div id="item_image">
+                          <img
+                            width="250px"
+                            height="150px"
+                            src={itemdata.thumbnail}
+                            id="item_img"
+                            alt=""
+                          />
+                        </div>
+                        <div id="item_info">
+                          <p id="item_title">{itemdata.videotitle}</p>
+                          <p id="item_uploader">게시자 : {itemdata.uploader}</p>
+                          <p id="item_view">조회수 : {itemdata.view}</p>
+                          <p id="item_like">❤ {itemdata.videolike}</p>
+                        </div>
                       </div>
                     </a>
                   </div>
