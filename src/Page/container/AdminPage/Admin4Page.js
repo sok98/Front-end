@@ -13,7 +13,7 @@ function Admin4Page(props) {
     axios
       .get("http://localhost:5050/api/admin/confirm/" + videoid)
       .then((response) => {
-        console.log("axios 들어옴");
+        console.log("setVideo에 들어갈 내용 확인 (response.data)");
 
         if (response.data) {
           console.log(response.data);
@@ -25,7 +25,6 @@ function Admin4Page(props) {
   }, []);
   console.log("Video 값 확인");
   console.log(Video);
-  console.log(Video.videolink);
 
   const submitHandler = () => {
     axios

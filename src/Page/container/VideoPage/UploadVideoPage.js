@@ -95,7 +95,7 @@ function UploadVideoPage() {
               uploader: user,
             };
 
-            /*axios //stt axios
+            axios //stt axios
               .post("http://localhost:5050/api/upload/stt", body)
               .then((response) => {
                 console.log("stt axios 안");
@@ -104,27 +104,27 @@ function UploadVideoPage() {
                 if (response.data.success) {
                   alert("stt 성공");
                   console.log("stt 성공");
-                  setTimeout("6분만 기다리자", 360000);*/
-            axios
-              .post("http://localhost:5050/api/upload/textrank", body)
-              .then((response) => {
-                console.log("textrank axios 안");
-                console.log(response);
+                  //setTimeout("6분만 기다리자", 360000);
+                  axios
+                    .post("http://localhost:5050/api/upload/textrank", body)
+                    .then((response) => {
+                      console.log("textrank axios 안");
+                      console.log(response);
 
-                if (response.data.success) {
-                  console.log("textrank 성공");
-                  console.log(response.data.keyword);
-                  localStorage.setItem("keyword", response.data.keyword);
-                  alert("textrank 성공");
-                  window.location.pathname = "/UploadVideoSecond";
+                      if (response.data.success) {
+                        console.log("textrank 성공");
+                        console.log(response.data.keyword);
+                        localStorage.setItem("keyword", response.data.keyword);
+                        alert("textrank 성공");
+                        window.location.pathname = "/UploadVideoSecond";
+                      } else {
+                        alert("textrank 실패");
+                      }
+                    });
                 } else {
-                  alert("textrank 실패");
-                }
-              });
-            /*} else {
                   alert("stt 실패");
                 }
-              });*/
+              });
           } else {
             alert("업로드 실패");
           }

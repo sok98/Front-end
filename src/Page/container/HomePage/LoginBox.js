@@ -6,6 +6,7 @@ import "./loginbox.css";
 
 function LoginBox() {
   var username = localStorage.getItem("name");
+  var isadmin = localStorage.getItem("isadmin");
 
   const logout = () => {
     axios.post("http://localhost:5050/api/auth/logout").then((response) => {
@@ -20,6 +21,8 @@ function LoginBox() {
       window.location.reload(true);
     });
   };
+  console.log("isadmin 확인");
+  console.log(isadmin);
 
   return (
     <div>
@@ -29,10 +32,16 @@ function LoginBox() {
             <Link to="/MyPage" id="login_user">
               {username} 님
             </Link>
+
             {/*관리자일때만 버튼 보이게 변경*/}
-            <Link to="/Admin" id="login_admin">
-              관리자
-            </Link>
+            {isadmin == "true" ? (
+              <Link to="/Admin" id="login_admin">
+                관리자
+              </Link>
+            ) : (
+              <span></span>
+            )}
+
             <button id="login_logout" onClick={logout}>
               로그아웃
             </button>
