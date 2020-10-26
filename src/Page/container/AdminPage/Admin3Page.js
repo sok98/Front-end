@@ -9,6 +9,7 @@ import "./Admin.css";
 function Admin3Page(props) {
   const videoid = props.match.params.videoid;
   const [FilePath, setFilePath] = useState(null);
+  var start = 0;
 
   const onCSVChange = (e) => {
     setFilePath(e.target.files[0]);
@@ -32,6 +33,7 @@ function Admin3Page(props) {
 
   const submitHandler = () => {
     alert("변환처리가 시작됩니다.");
+    start = 1;
     console.log("useEffect 들어옴");
     for (var value of formData.values()) {
       console.log(value);
@@ -66,6 +68,7 @@ function Admin3Page(props) {
           *업로드 후 자동으로 변환 처리가 시작되고, 완료 후 다음 화면으로
           넘어갑니다.
         </h4>
+        {start == 1 ? <h1>변환 중입니다.</h1> : <div></div>}
       </div>
     </div>
   );

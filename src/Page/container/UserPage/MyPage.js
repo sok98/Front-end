@@ -15,33 +15,33 @@ function MyPage() {
   var bitmap;
 
   let body = {
-    userid: userid
-  }
+    userid: userid,
+  };
 
   /*화면에 띄우기*/
   useEffect(() => {
-
     const config = {
-      responseType: "arraybuffer"
+      responseType: "arraybuffer",
     };
 
-    axios.post("http://localhost:5050/api/mypage/wordcloud", body, config)
-      .then(response => {
-        console.log("워드클라우드axio된건가?")
+    axios
+      .post("http://localhost:5050/api/mypage/wordcloud", body, config)
+      .then((response) => {
+        console.log("워드클라우드axio된건가?");
         console.log(response);
         console.log(response.data);
 
-        bitmap = new Buffer(response.data, 'base64');
+        bitmap = new Buffer(response.data, "base64");
         console.log(bitmap);
         localStorage.setItem("bitt", bitmap);
-      })
-  }, [])
+      });
+  }, []);
 
   console.log("1");
   console.log(bitmap);
   console.log("2");
   console.log(localStorage.getItem("bitt"));
-  var iimmgg = 'data:image/jpeg;base64,' + localStorage.getItem("bitt");
+  var iimmgg = "data:image/jpeg;base64," + localStorage.getItem("bitt");
 
   console.log("3이라고");
   console.log(iimmgg);
@@ -63,18 +63,17 @@ function MyPage() {
             <div class="myupload_mypage">
               <UserUploadBox />
             </div>
-
           </div>
         </div>
       ) : (
-          <div>
-            <Header />
-            <Navi />
-            <div class="MyPage">
-              <h2 id="please">로그인 후 이용 가능합니다.</h2>
-            </div>
+        <div>
+          <Header />
+          <Navi />
+          <div class="MyPage">
+            <h2 id="please">로그인 후 이용 가능합니다.</h2>
           </div>
-        )}
+        </div>
+      )}
     </div>
   );
 }
