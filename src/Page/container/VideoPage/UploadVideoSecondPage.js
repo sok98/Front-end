@@ -120,7 +120,7 @@ function UploadVideoSecondPage() {
     };
 
     axios
-      .post("http://localhost:5050/api/upload/submit", body)
+      .post("http://wordballoon.net:5050/api/upload/submit", body)
       .then((response) => {
         console.log("업로드 성공?");
         console.log(response);

@@ -28,7 +28,7 @@ function LoginPage({ history }) {
     };
 
     axios
-      .post("http://localhost:5050/api/auth/login", body)
+      .post("http://wordballoon.net:5050/api/auth/login", body)
       .then((response) => {
         //console.log(url);
         console.log(response);

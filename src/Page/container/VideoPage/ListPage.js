@@ -20,7 +20,7 @@ class ListPage extends Component {
     };
 
     axios
-      .post("http://localhost:5050/api/searchword/title", body)
+      .post("http://wordballoon.net:5050/api/searchword/title", body)
       .then((response) => {
         console.log("axios 들어옴");
         console.log(response);

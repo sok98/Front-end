@@ -12,7 +12,7 @@ class AdminPage extends Component {
   };
 
   loadList = async () => {
-    axios.get("http://localhost:5050/api/admin/list").then((response) => {
+    axios.get("http://wordballoon.net:5050/api/admin/list").then((response) => {
       localStorage.setItem("videoid", response.data.videoid);
       this.setState({
         VideoList: response.data,

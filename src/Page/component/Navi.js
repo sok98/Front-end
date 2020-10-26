@@ -32,17 +32,19 @@ class Navi extends Component {
     var username = localStorage.getItem("name");
 
     const logout = () => {
-      axios.post("http://localhost:5050/api/auth/logout").then((response) => {
-        // localstorage 회원정보 삭제
-        localStorage.removeItem("userid");
-        localStorage.removeItem("password");
-        localStorage.removeItem("name");
-        localStorage.removeItem("birth");
-        localStorage.removeItem("isadmin");
-        alert("로그아웃되었습니다.");
-        console.log(response);
-        window.location.reload(true);
-      });
+      axios
+        .post("http://wordballoon.net:5050/api/auth/logout")
+        .then((response) => {
+          // localstorage 회원정보 삭제
+          localStorage.removeItem("userid");
+          localStorage.removeItem("password");
+          localStorage.removeItem("name");
+          localStorage.removeItem("birth");
+          localStorage.removeItem("isadmin");
+          alert("로그아웃되었습니다.");
+          console.log(response);
+          window.location.reload(true);
+        });
     };
     return (
       <div className="Navi">

@@ -78,7 +78,7 @@ function UploadVideoPage() {
       };
 
       axios //업로드 axios
-        .post("http://localhost:5050/api/upload/video", formData, config)
+        .post("http://wordballoon.net:5050/api/upload/video", formData, config)
         .then((response) => {
           console.log("업로드 axios 안");
           console.log(response);
@@ -95,7 +95,7 @@ function UploadVideoPage() {
             };
 
             axios //stt axios
-              .post("http://localhost:5050/api/upload/stt", body)
+              .post("http://wordballoon.net:5050/api/upload/stt", body)
               .then((response) => {
                 console.log("stt axios 안");
                 console.log(response);
@@ -104,7 +104,10 @@ function UploadVideoPage() {
                   console.log("stt 성공");
                   //setTimeout("6분만 기다리자", 360000);
                   axios
-                    .post("http://localhost:5050/api/upload/textrank", body)
+                    .post(
+                      "http://wordballoon.net:5050/api/upload/textrank",
+                      body
+                    )
                     .then((response) => {
                       console.log("textrank axios 안");
                       console.log(response);

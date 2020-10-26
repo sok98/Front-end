@@ -10,29 +10,31 @@ function TopVideoBox() {
 
   /*useeffect()가 아마도 화면이 띄어을떄 */
   useEffect(() => {
-    axios.get("http://localhost:5050/api/main/viewtop").then((response) => {
-      console.log("axio된건가?");
-      console.log(response);
-      if (response.data) {
-        console.log("if문 안");
+    axios
+      .get("http://wordballoon.net:5050/api/main/viewtop")
+      .then((response) => {
+        console.log("axio된건가?");
+        console.log(response);
+        if (response.data) {
+          console.log("if문 안");
 
-        /*콘솔로 찍어보기 */
-        for (var i = 0; i < response.data.length; i++) {
-          var id = response.data[i].videoid;
-          var title = response.data[i].videotitle;
-          var link = response.data[i].videolink;
-          var thum = response.data[i].thumbnail;
-          console.log(id);
-          console.log(title);
-          console.log(link);
-          console.log(thum);
+          /*콘솔로 찍어보기 */
+          for (var i = 0; i < response.data.length; i++) {
+            var id = response.data[i].videoid;
+            var title = response.data[i].videotitle;
+            var link = response.data[i].videolink;
+            var thum = response.data[i].thumbnail;
+            console.log(id);
+            console.log(title);
+            console.log(link);
+            console.log(thum);
+          }
+          setVideos(response.data);
+        } else {
+          alert("Failed to get Videos");
+          console.log("else문 안");
         }
-        setVideos(response.data);
-      } else {
-        alert("Failed to get Videos");
-        console.log("else문 안");
-      }
-    });
+      });
   }, []);
 
   /*6개가 넘어오기떄문에*/

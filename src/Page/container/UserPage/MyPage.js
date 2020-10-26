@@ -25,7 +25,7 @@ function MyPage() {
     };
 
     axios
-      .post("http://localhost:5050/api/mypage/wordcloud", body, config)
+      .post("http://wordballoon.net:5050/api/mypage/wordcloud", body, config)
       .then((response) => {
         console.log("워드클라우드axio된건가?");
         console.log(response);

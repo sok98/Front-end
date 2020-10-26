@@ -14,7 +14,7 @@ function Admin2Page(props) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5050/api/admin/edit/" + videoid)
+      .get("http://wordballoon.net:5050/api/admin/edit/" + videoid)
       .then((response) => {
         console.log("axios 들어옴");
 

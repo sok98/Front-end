@@ -39,7 +39,7 @@ function Admin3Page(props) {
       console.log(value);
     }
     axios
-      .post("http://localhost:5050/api/admin/change", formData, config)
+      .post("http://wordballoon.net:5050/api/admin/change", formData, config)
       .then((response) => {
         console.log("axios 들어옴");
         console.log(response.data);
@@ -68,7 +68,8 @@ function Admin3Page(props) {
           *업로드 후 자동으로 변환 처리가 시작되고, 완료 후 다음 화면으로
           넘어갑니다.
         </h4>
-        {start == 1 ? <h1>변환 중입니다.</h1> : <div></div>}
+        {/*다시 확인해보기*/}
+        {/*{start == 1 ? <h1>변환 중입니다.</h1> : <div></div>}*/}
       </div>
     </div>
   );

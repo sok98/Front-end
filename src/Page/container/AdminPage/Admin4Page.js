@@ -11,7 +11,7 @@ function Admin4Page(props) {
   useEffect(() => {
     console.log("useEffect 안");
     axios
-      .get("http://localhost:5050/api/admin/confirm/" + videoid)
+      .get("http://wordballoon.net:5050/api/admin/confirm/" + videoid)
       .then((response) => {
         console.log("setVideo에 들어갈 내용 확인 (response.data)");
 
@@ -28,7 +28,7 @@ function Admin4Page(props) {
 
   const submitHandler = () => {
     axios
-      .get("http://localhost:5050/api/admin/complete/" + videoid)
+      .get("http://wordballoon.net:5050/api/admin/complete/" + videoid)
       .then((response) => {
         console.log("axios 들어옴");
         console.log(response.data);

@@ -37,7 +37,7 @@ function ChangePage({ history }) {
 
     console.log("렛 바디 이후임");
     axios
-      .post("http://localhost:5050/api/auth/update", body)
+      .post("http://wordballoon.net:5050/api/auth/update", body)
       .then((response) => {
         console.log("비번체크axio된건가?");
         console.log(response.data.success);
@@ -104,7 +104,7 @@ function ChangePage({ history }) {
       };
       console.log("렛 바디2 이후임");
       axios
-        .post("http://localhost:5050/api/auth/update", body)
+        .post("http://wordballoon.net:5050/api/auth/update", body)
         .then((response) => {
           if (response.data.success) {
             alert("수정이 완료되었습니다");
