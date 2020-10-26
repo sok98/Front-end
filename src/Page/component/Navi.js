@@ -57,12 +57,12 @@ class Navi extends Component {
               </div>
               <ul class="sub">
                 <li>
-                  <a href="http://wordballoon.net:5050/UserWatched">
+                  <a href="http://wordballoon.net:3000/UserWatched">
                     최근 본 영상
                   </a>
                 </li>
                 <li>
-                  <a href="http://wordballoon.net:5050/UserLike">
+                  <a href="http://wordballoon.net:3000/UserLike">
                     좋아요 한 영상
                   </a>
                 </li>
@@ -80,12 +80,12 @@ class Navi extends Component {
               </div>
               <ul class="sub">
                 <li>
-                  <a href="http://wordballoon.net:5050/CategoryKor">
+                  <a href="http://wordballoon.net:3000/CategoryKor">
                     한국 영상
                   </a>
                 </li>
                 <li>
-                  <a href="http://wordballoon.net:5050/CategoryEng">
+                  <a href="http://wordballoon.net:3000/CategoryEng">
                     영어 영상
                   </a>
                 </li>
@@ -128,12 +128,12 @@ class Navi extends Component {
                 </div>
                 <ul class="sub2">
                   <li>
-                    <a href="http://wordballoon.net:5050/UserWatched">
+                    <a href="http://wordballoon.net:3000/UserWatched">
                       최근 본 영상
                     </a>
                   </li>
                   <li>
-                    <a href="http://wordballoon.net:5050/UserLike">
+                    <a href="http://wordballoon.net:3000/UserLike">
                       좋아요 한 영상
                     </a>
                   </li>
@@ -151,12 +151,12 @@ class Navi extends Component {
                 </div>
                 <ul class="sub2">
                   <li>
-                    <a href="http://wordballoon.net:5050/CategoryKor">
+                    <a href="http://wordballoon.net:3000/CategoryKor">
                       한국 영상
                     </a>
                   </li>
                   <li>
-                    <a href="http://wordballoon.net:5050/CategoryEng">
+                    <a href="http://wordballoon.net:3000/CategoryEng">
                       영어 영상
                     </a>
                   </li>
